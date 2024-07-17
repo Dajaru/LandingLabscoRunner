@@ -1,0 +1,269 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/static/Inter-Regular.ttf'), ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #fbbb4e;
+    --secondary-color: #375ad9;
+    --accent-color: #e74c3c;
+    --text-color: #333333;
+    --background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'inter', sans-serif !important;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 1px 3.2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.navbar-brand .runner {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar .btn-signin {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .btn-signin:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-signin {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.btn-signin:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-signin .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.btn-signin .icon::before {
+    content: '\2192';
+    font-size: 16px;
+}
+
+/* End Navbar */
+
+
+/* Page Registration */
+.registration-section {
+    padding: 2em 0;
+    background-color: #F2F6FF;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    margin: 2em 0;
+}
+
+.progress-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ccc;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    background: #4C77E5;
+    z-index: 2;
+    transition: width 0.3s ease;
+}
+
+.step-number {
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+    color: #4C77E5;
+    font-weight: bold;
+    border: 2px solid #3498db;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .step-number {
+        height: 50px;
+        width: 50px;
+        font-size: 14px;
+    }
+
+    .progress-container {
+        max-width: 350px;
+    }
+}
+
+.step-number.active {
+    background-color: #F99D1B;
+    border-color: #F99D1B;
+    color: white;
+}
+
+.step-number.completed {
+    background-color: #4C77E5;
+    border-color: #4C77E5;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.registration {
+    background-color: #fff;
+    border-radius: 31px;
+    padding: 2em;
+}
+
+
+.registration .title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #4C77E5;
+}
+
+.registration .description {
+    font-size: 1rem;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.registration .category-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 0;
+    color: #525252;
+}
+
+.registration .category-title-2 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #F37F0D;
+}
+
+.registration .option-label {
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .registration-section {
+        max-height: 225.33px;
+    }
+
+    .registration {
+        padding: 0;
+        border-radius: 0px;
+        margin-top: 2em;
+    }
+
+    .registration .title {
+        font-size: 18px;
+    }
+
+    .registration .description {
+        /* font-size: 1rem; */
+        margin-top: 20px;
+        display: block;
+    }
+
+    .registration .run-category {
+        padding: 20px 0;
+    }
+
+    .registration .category-title {
+        margin: 20px 0;
+        font-size: 16px;
+    }
+    .registration .category-title-2 {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+}
