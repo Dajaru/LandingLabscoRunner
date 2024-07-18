@@ -56,6 +56,7 @@
             </div>
         </nav>
     </header>
+
     <section class="registration-section">
         <div class="container">
             <h4 class="font-weight-bold">Informasi Peserta</h4>
@@ -71,6 +72,36 @@
 
             <form id="multiStepForm" class="registration">
                 <div class="step active" data-step="1">
+                    <div class="registration-form">
+                        <h2 class="title text-primary">Akun Peserta</h2>
+                        <p class="description">Silahkan isi data dibawah untuk akun anda. Jika ada <span
+                                class="text-danger">*</span> berarti
+                            data wajib diisi</p>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Number Phone <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="phone" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="password" placeholder="Placeholder"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+                    <div class="registration-frame-button">
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
+                        <button type="button"
+                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
+                    </div>
+                </div>
+
+                <div class="step" data-step="2">
+                    <!-- Step 2 content goes here -->
                     <div class="run-category">
                         <span class="title">Kategori Lari</span>
                         <p class="description">Silahkan pilih kategori lari anda. Ada 2 Kategori yaitu Fun match dan
@@ -92,75 +123,208 @@
                             <span class="category-title-2">Group</span>
                             <div class="form-check mt-3">
                                 <input type="radio" id="group10k" name="kompetisi" class="form-check-input">
-                                <label for="group10k" class="form-check-label option-label">5K 5K (4 runners) — Rp 2.000.000</label>
+                                <label for="group10k" class="form-check-label option-label">5K 5K (4 runners) — Rp
+                                    2.000.000</label>
                             </div>
                             <div class="form-check">
                                 <input type="radio" id="group5k" name="kompetisi" class="form-check-input">
-                                <label for="group5k" class="form-check-label option-label">10K 5K (4 runners) — Rp 2.200.000</label>
+                                <label for="group5k" class="form-check-label option-label">10K 5K (4 runners) — Rp
+                                    2.200.000</label>
                             </div>
                         </fieldset>
-                            <legend class="category-title">Santai / Seru-seruan</legend>
+                        <legend class="category-title">Santai / Seru-seruan</legend>
                         <fieldset>
                             <span class="category-title-2">Group</span>
-                            <!-- <div class="form-check mt-3">
-                                <input type="radio" id="group5kSantai" name="santai" class="form-check-input">
-                                <label for="group5kSantai" class="form-check-label option-label">Group 5K (2 runners) -
-                                    Rp 1,050,000</label>
-                            </div> -->
                             <div class="form-check mt-3">
                                 <input type="radio" id="single5k" name="kompetisi" class="form-check-input">
                                 <label for="single5k" class="form-check-label option-label">Group 5K (2 runners) -
                                     Rp 1,050,000</label>
                             </div>
                         </fieldset>
-                        <button type="button"
-                            class="btn btn-primary py-2 mt-4 next-step"><strong>Selanjutnya</strong></button>
                     </div>
-                </div>
-
-                <div class="step" data-step="2">
-                    <!-- Step 2 content goes here -->
-                    <p>Konten langkah 2</p>
-                    <div class="d-flex justify-content-between">
+                    <div class="line"></div>
+                    <div class="registration-frame-button">
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
                         <button type="button"
-                            class="btn btn-secondary py-2 mt-4 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 mt-4 next-step"><strong>Selanjutnya</strong></button>
+                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
                     </div>
                 </div>
 
                 <div class="step" data-step="3">
                     <!-- Step 3 content goes here -->
-                    <p>Konten langkah 3</p>
-                    <div class="d-flex justify-content-between">
+                    <div class="personal-data">
+                        <span class="title">Data Diri Peserta</span>
+                        <p class="description">Silahkan isi data dibawah untuk memasukkan data diri anda. Jika ada <span
+                                class="text-danger">*</span> berarti data wajib diisi.</p>
+                        <div class="form-group">
+                            <label for="firstName">Nama Depan <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nama Belakang <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Jenis Kelamin <span class="text-danger">*</span></label>
+                            <select class="form-control" id="gender" required>
+                                <option>Placeholder</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">Tanggal Lahir <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="birthDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ktpPassport">KTP/Passport <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="ktpPassport" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Kewarganegaraan <span class="text-danger">*</span></label>
+                            <select class="form-control" id="nationality" required>
+                                <option>Placeholder</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Kota <span class="text-danger">*</span></label>
+                            <select class="form-control" id="city" required>
+                                <option>Placeholder</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organisasi</label>
+                            <input type="text" class="form-control" id="organization" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Pekerjaan</label>
+                            <input type="text" class="form-control" id="occupation" placeholder="Placeholder">
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+                    <div class="registration-frame-button">
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
                         <button type="button"
-                            class="btn btn-secondary py-2 mt-4 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 mt-4 next-step"><strong>Selanjutnya</strong></button>
+                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
                     </div>
                 </div>
 
                 <div class="step" data-step="4">
                     <!-- Step 4 content goes here -->
-                    <p>Konten langkah 4</p>
-                    <div class="d-flex justify-content-between">
-                        <button type="button"
-                            class="btn btn-secondary py-2 mt-4 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 mt-4 next-step"><strong>Selanjutnya</strong></button>
+                    <div class="contact-and-medic">
+                        <h2 class="title">Kontak Darurat & Informasi Medis</h2>
+                        <p class="description">Silahkan isi data dibawah untuk memasukkan kontak darurat dan riwayat
+                            penyakit anda. Jika ada
+                            <span class="text-danger">*</span> berarti data wajib diisi.
+                        </p>
+
+                        <div class="form-group">
+                            <label for="guardianName">Nama Wali <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="guardianName" placeholder="Placeholder"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guardianPhone">Nomor HP Wali <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="guardianPhone" placeholder="Placeholder"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="relationship">Wali <span class="text-danger">*</span></label>
+                            <select class="form-control" id="relationship" required>
+                                <option>Placeholder</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodType">Golongan Darah <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="bloodType" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="medicalCondition">Kondisi medis anda? Jika ada silahkan isi</label>
+                            <textarea class="form-control" id="medicalCondition" placeholder="Placeholder"
+                                rows="3"></textarea>
+                        </div>
                     </div>
+                    <div class="line"></div>
+                    <div class="registration-frame-button">
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
+                        <button type="button"
+                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
+                    </div>
+
                 </div>
 
                 <div class="step" data-step="5">
                     <!-- Step 5 content goes here -->
-                    <p>Konten langkah 5</p>
-                    <div class="d-flex justify-content-between">
+                    <div class="run-information">
+                        <h2 class="title">Informasi Lari</h2>
+                        <p class="description">Silahkan isi data dibawah untuk memasukkan informasi lari seperti
+                            racepack dan
+                            lain-lain.<span class="text-danger">*</span> berarti data wajib diisi.
+
+
+                        <div class="form-group">
+                            <label for="size">Pilih ukuran baju <span class="text-danger">*</span></label>
+                            <select class="form-control" id="size" name="size">
+                                <option value="" disabled selected>Placeholder</option>
+                                <!-- Add more options here -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pengambilan Paket Lari <span class="text-danger">*</span></label><br>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="pickup" name="pickup"
+                                    value="ambillitempat" checked>
+                                <label class="form-check-label" for="pickup">Ambil ditempat</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group location-take" id="lokasi-pengambilan">
+                            <label>Lokasi Pengambilan</label>
+                            <p>Perkantoran Kebayoran Baru Mall No. 29, RT.4/RW.7, Gunung, Kec. Kby. Baru, Kota Jakarta
+                                Selatan, Daerah Khusus Ibukota Jakarta 12120
+                            </p>
+                            <a href="#">Lihat lebih detail...</a>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Pilih jam pengambilan</label>
+                            <select class="form-control" id="time" name="time">
+                                <option value="" disabled selected>Placeholder</option>
+                                <!-- Add more options here -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="community">Nama Komunitas Lari</label>
+                            <input type="text" class="form-control" id="community" name="community"
+                                placeholder="Jika ada silahkan isi dengan benar">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Asuransi <span class="text-danger">*</span></label><br>
+                            <p>Centang kotak ☑ untuk mendapatkan gratis Asuransi Jiwa & Asuransi Kecelakaan Diri dari
+                                Perusahaan Asuransi bagi para pelari selama Labsco Run 2024. Peserta akan mendapatkan
+                                perlindungan dan sertifikat asuransi dari Perusahaan Asuransi.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="insurance" name="insurance" checked>
+                                <label for="insurance">
+                                    Saya Setuju untuk dihubungi untuk Pertanggungan Asuransi Jiwa oleh Perusahaan Asuransi
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line"></div>
+                    <div class="registration-frame-button">
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
+                        <a href="page/confirmed-data.html">
                         <button type="button"
-                            class="btn btn-secondary py-2 mt-4 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 mt-4 next-step"><strong>Selanjutnya</strong></button>
+                            class="btn btn-primary py-2 next-step"><strong>Selesai</strong></button>
+                        </a>
                     </div>
                 </div>
+
+
             </form>
         </div>
     </section>

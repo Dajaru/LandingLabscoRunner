@@ -98,14 +98,6 @@ body {
     background-color: #F2F6FF;
 }
 
-.step {
-    display: none;
-}
-
-.step.active {
-    display: block;
-}
-
 .progress-container {
     display: flex;
     justify-content: space-between;
@@ -179,44 +171,36 @@ body {
 }
 
 
+.registration {}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.registration {
+.registration .step {
     background-color: #fff;
     border-radius: 31px;
-    padding: 2em;
+    /* padding: 2.5em; */
+    padding-bottom: 0px;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    display: none;
 }
 
+.registration .step.active {
+    display: block;
+}
 
 .registration .title {
     font-weight: bold;
     font-size: 24px;
-    color: #4C77E5;
+    color: #375AD9;
 }
 
 .registration .description {
-    font-size: 1rem;
-    margin-top: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 23px 0;
+    color: #666666;
 }
 
 .registration .category-title {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 22px;
     margin: 20px 0;
     color: #525252;
@@ -233,6 +217,61 @@ body {
     margin-left: 0.5rem;
 }
 
+.registration .registration-form,
+.run-category,
+.personal-data,
+.contact-and-medic,
+.run-information {
+    padding: 2.3rem;
+    padding-bottom: 1rem;
+}
+
+/* .registration .registration-form , .personal-data , .contact-and-medic input {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    box-shadow: 0 0 3.5px 0 rgba(0, 0, 0, 0.40);
+} */
+
+.registration .registration-form,
+.personal-data,
+.contact-and-medic,
+.run-information label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.registration .line {
+    height: 2px;
+    background-color: hwb(0 0% 100% / 0.106);
+    width: 100%;
+}
+
+.registration .registration-frame-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 2.3rem;
+    position: relative;
+}
+
+.registration .run-information .location-take {
+    padding: 15px;
+    background-color: #F0F5FE;
+    font-size: 16px;
+    border-radius: 9px;
+}
+.registration .run-information .location-take label {
+    color: #2E47C7;
+}
+
+.registration .run-information .location-take p {
+    color: #1D234E;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.registration .run-information .location-take a {
+    font-size: 15px;
+}
 @media (max-width: 600px) {
     .registration-section {
         max-height: 225.33px;
@@ -262,8 +301,14 @@ body {
         margin: 20px 0;
         font-size: 16px;
     }
+
     .registration .category-title-2 {
         margin: 20px 0;
         font-size: 15px;
     }
+}
+
+.registration-section {
+    padding: 2em 0;
+    background-color: #F2F6FF;
 }
