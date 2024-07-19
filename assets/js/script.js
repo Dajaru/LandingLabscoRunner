@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeStep = document.querySelector('.step.active');
         const activeIndex = Array.from(steps).indexOf(activeStep);
         const totalSteps = steps.length - 1;
-        const progressPercent = activeIndex === totalSteps ? (totalSteps / totalSteps) * 120 : ((activeIndex + 1) / steps.length) * 120;
+        const progressPercent = activeIndex === totalSteps ? (totalSteps / totalSteps) * 130 : ((activeIndex + 1) / steps.length) * 130;
         stepProgress.style.width = `${progressPercent}%`;
 
         steps.forEach((s, i) => {

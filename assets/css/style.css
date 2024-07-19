@@ -6,10 +6,9 @@
 }
 
 :root {
-    --primary-color: #fbbb4e;
-    --secondary-color: #375ad9;
-    --accent-color: #e74c3c;
-    --text-color: #333333;
+    --primary-color: #F37F0D;
+    --secondary-color: #375AD9;
+    --text-color: #666666;
     --background-color: #ffffff;
 }
 
@@ -91,10 +90,25 @@ body {
 
 /* End Navbar */
 
+.information-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.information-description {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+
 
 /* Page Registration */
 .registration-section {
     padding: 2em 0;
+    min-height: 100vh;
     background-color: #F2F6FF;
 }
 
@@ -103,7 +117,7 @@ body {
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    margin: 2em 0;
+    margin: 2em auto;
 }
 
 .progress-container::before {
@@ -146,7 +160,7 @@ body {
     font-size: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .step-number {
         height: 50px;
         width: 50px;
@@ -171,14 +185,7 @@ body {
 }
 
 
-.registration {}
-
 .registration .step {
-    background-color: #fff;
-    border-radius: 31px;
-    /* padding: 2.5em; */
-    padding-bottom: 0px;
-    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
     display: none;
 }
 
@@ -186,17 +193,27 @@ body {
     display: block;
 }
 
+.registration .frame-step {
+    background-color: #fff;
+    border-radius: 31px;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+}
+
+.registration .frame-step:nth-child(2) {
+    margin-top: 2rem;
+}
+
 .registration .title {
     font-weight: bold;
     font-size: 24px;
-    color: #375AD9;
+    color: #375AD9 !important;
 }
 
 .registration .description {
     font-size: 16px;
     font-weight: 400;
-    margin: 23px 0;
-    color: #666666;
+    margin: 20px 0;
+    color: var(--text-color);
 }
 
 .registration .category-title {
@@ -223,15 +240,8 @@ body {
 .contact-and-medic,
 .run-information {
     padding: 2.3rem;
-    padding-bottom: 1rem;
 }
 
-/* .registration .registration-form , .personal-data , .contact-and-medic input {
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 9px;
-    box-shadow: 0 0 3.5px 0 rgba(0, 0, 0, 0.40);
-} */
 
 .registration .registration-form,
 .personal-data,
@@ -241,17 +251,28 @@ body {
     font-size: 16px;
 }
 
+.registration .registration-form,
+.personal-data,
+.contact-and-medic,
+.run-information {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
 .registration .line {
     height: 2px;
-    background-color: hwb(0 0% 100% / 0.106);
     width: 100%;
 }
 
 .registration .registration-frame-button {
     display: flex;
     justify-content: space-between;
-    padding: 15px 2.3rem;
+    padding: 15px 1rem;
     position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
 }
 
 .registration .run-information .location-take {
@@ -260,6 +281,7 @@ body {
     font-size: 16px;
     border-radius: 9px;
 }
+
 .registration .run-information .location-take label {
     color: #2E47C7;
 }
@@ -269,18 +291,34 @@ body {
     margin-bottom: 10px;
     padding: 0;
 }
+
 .registration .run-information .location-take a {
     font-size: 15px;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 650px) {
+    .container {
+        padding: 0 !important;
+    }
+
     .registration-section {
-        max-height: 225.33px;
+        max-height: 100% !important;
     }
 
     .registration {
-        padding: 0;
         border-radius: 0px;
         margin-top: 2em;
+    }
+
+    .registration .frame-step {
+        background-color: #fff;
+        border-radius: 0px !important;
+        box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    }
+
+    .registration-frame-button {
+        border-radius: 0px !important;
+        padding: 15px 1rem;
     }
 
     .registration .title {
@@ -288,13 +326,24 @@ body {
     }
 
     .registration .description {
-        /* font-size: 1rem; */
         margin-top: 20px;
         display: block;
     }
 
-    .registration .run-category {
-        padding: 20px 0;
+    .registration .registration-form,
+    .run-category,
+    .personal-data,
+    .contact-and-medic,
+    .run-information,
+    .registration-frame-button {
+        padding: 15px 1rem;
+    }
+
+    .registration .registration-form,
+    .personal-data,
+    .contact-and-medic,
+    .run-information label {
+        font-size: 15px !important;
     }
 
     .registration .category-title {
@@ -308,7 +357,183 @@ body {
     }
 }
 
-.registration-section {
-    padding: 2em 0;
+
+.frame-title-page {
+    padding: 10px;
+}
+
+/* Page Confirmed Data */
+.confirmed-data {
+    padding: 1em 0;
     background-color: #F2F6FF;
+}
+
+.confirmed-data .frame-step {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    padding: 2.3rem;
+    margin-top: 2rem;
+}
+
+.confirmed-data .frame-step:nth-child(1) {
+    margin-top: 0px !important;
+}
+
+.confirmed-data .frame-step:nth-child(3) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.confirmed-data .frame-step .title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #375AD9 !important;
+    margin: 0 0 20px 0;
+}
+
+.confirmed-data .frame-step label {
+    font-weight: bold;
+}
+
+.confirmed-data .line {
+    height: 2px;
+    width: 100%;
+}
+
+.confirmed-data .registration-frame-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 1rem;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+}
+
+@media (max-width: 650px) {
+    .confirmed-data .frame-step {
+        padding: 20px 1rem;
+        border-radius: 0px !important;
+    }
+
+    .confirmed-data .frame-step .title {
+        font-size: 18px;
+    }
+
+    .confirmed-data .frame-step label {
+        font-size: 15px;
+    }
+}
+
+
+
+.terms-conditions {
+    padding: 1rem 0;
+    background-color: #F2F6FF;
+}
+
+.terms-conditions .frame-step {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.terms-conditions .frame-step:nth-child(1) {
+    margin-top: 0px !important;
+    padding: 20px 1.5rem;
+}
+
+.terms-conditions .frame-step:nth-child(3) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.terms-conditions .frame-step .title{
+    font-weight: bold;
+    font-size: 24px;
+    color: #375AD9 !important;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.terms-conditions .frame-step .title label {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.terms-conditions .frame-step label {
+    font-weight: bold;
+}
+
+.terms-conditions .frame-step .category-runs {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.terms-conditions .frame-step .register-as {
+    background-color: #F4F7FF;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.terms-conditions .frame-step .register-as b {
+    font-size: 16px;
+    padding: 0px 0px 1rem 0px;
+}
+
+.terms-conditions .frame-step .register-as p {
+    font-size: 16px;
+    color: #626262;
+}
+
+.terms-conditions .frame-step .term-title{
+    font-weight: bold;
+    padding-left: 5px;
+    color: var(--text-color);
+}
+
+.terms-conditions .frame-step .term-content {
+    list-style-type: disc;
+    list-style: circle;
+    color: var(--text-color);
+}
+
+.terms-conditions .frame-step .term-content ul {
+    padding: 10px 40px 0px;
+}
+
+.terms-conditions .line {
+    height: 2px;
+    width: 100%;
+}
+
+.terms-conditions .registration-frame-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 1rem;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+}
+
+@media (max-width: 650px) {
+    .terms-conditions .frame-step {
+        padding: 10px !important;
+        border-radius: 0px !important;
+    }
+    .terms-conditions .frame-step .title{
+        font-size: 18px !important;
+    }
+    .terms-conditions .frame-step .category-runs{
+        font-size: 16px !important;
+    }
+
 }

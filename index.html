@@ -39,15 +39,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kontak</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">lorem ipsum</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sir dolor Ahmet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mamet emplan sus</a>
-                    </li>
                 </ul>
                 <button class="btn btn-outline-secondary btn-signin">
                     Sign In
@@ -59,50 +50,21 @@
 
     <section class="registration-section">
         <div class="container">
-            <h4 class="font-weight-bold">Informasi Peserta</h4>
-            <p>Silahkan masukkan informasi pribadi anda dengan benar secara step by step.</p>
-            <div class="progress-container">
-                <div class="step-progress" id="step-progress"></div>
-                <div class="step-number active" data-step="1">1</div>
-                <div class="step-number" data-step="2">2</div>
-                <div class="step-number" data-step="3">3</div>
-                <div class="step-number" data-step="4">4</div>
-                <div class="step-number" data-step="5">5</div>
+            <div class="col-12 information">
+                <h4 class="font-weight-bold information-title">Pendaftaran Event</h4>
+                <p class="information-description">Silahkan masukkan informasi pribadi anda dengan benar secara step by step.</p>
+                <div class="progress-container">
+                    <div class="step-progress" id="step-progress"></div>
+                    <div class="step-number active" data-step="1">1</div>
+                    <div class="step-number" data-step="2">2</div>
+                    <div class="step-number" data-step="3">3</div>
+                    <div class="step-number" data-step="4">4</div>
+                </div>
             </div>
 
             <form id="multiStepForm" class="registration">
                 <div class="step active" data-step="1">
-                    <div class="registration-form">
-                        <h2 class="title text-primary">Akun Peserta</h2>
-                        <p class="description">Silahkan isi data dibawah untuk akun anda. Jika ada <span
-                                class="text-danger">*</span> berarti
-                            data wajib diisi</p>
-                        <div class="form-group">
-                            <label for="email">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Number Phone <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="phone" placeholder="Placeholder" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password <span class="text-danger">*</span></label>
-                            <input type="password" class="form-control" id="password" placeholder="Placeholder"
-                                required>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-                    <div class="registration-frame-button">
-                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="2">
-                    <!-- Step 2 content goes here -->
-                    <div class="run-category">
+                    <div class="frame-step run-category">
                         <span class="title">Kategori Lari</span>
                         <p class="description">Silahkan pilih kategori lari anda. Ada 2 Kategori yaitu Fun match dan
                             Kompetisi. Jangan sampai salah pilih.</p>
@@ -142,17 +104,28 @@
                             </div>
                         </fieldset>
                     </div>
+                    <div class="frame-step registration-form">
+                        <h2 class="title text-primary">Akun Peserta</h2>
+                        <p class="description">Silahkan isi data dibawah untuk akun anda. Jika ada <span
+                                class="text-danger">*</span> berarti
+                            data wajib diisi</p>
+                        <div class="form-group">
+                            <label for="email">Alamat Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
+                        </div>
+                        <button class="btn btn-primary">Kirim Kode Verifikasi</button>
+                    </div>
+
                     <div class="line"></div>
-                    <div class="registration-frame-button">
-                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
+                    <div class="registration-frame-button justify-content-end">
                         <button type="button"
                             class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
                     </div>
                 </div>
 
-                <div class="step" data-step="3">
+                <div class="step" data-step="2">
                     <!-- Step 3 content goes here -->
-                    <div class="personal-data">
+                    <div class="frame-step personal-data">
                         <span class="title">Data Diri Peserta</span>
                         <p class="description">Silahkan isi data dibawah untuk memasukkan data diri anda. Jika ada <span
                                 class="text-danger">*</span> berarti data wajib diisi.</p>
@@ -208,9 +181,9 @@
                     </div>
                 </div>
 
-                <div class="step" data-step="4">
+                <div class="step" data-step="3">
                     <!-- Step 4 content goes here -->
-                    <div class="contact-and-medic">
+                    <div class="frame-step contact-and-medic">
                         <h2 class="title">Kontak Darurat & Informasi Medis</h2>
                         <p class="description">Silahkan isi data dibawah untuk memasukkan kontak darurat dan riwayat
                             penyakit anda. Jika ada
@@ -228,7 +201,7 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="relationship">Wali <span class="text-danger">*</span></label>
+                            <label for="relationship">Hubungan Wali <span class="text-danger">*</span></label>
                             <select class="form-control" id="relationship" required>
                                 <option>Placeholder</option>
                             </select>
@@ -252,9 +225,9 @@
 
                 </div>
 
-                <div class="step" data-step="5">
+                <div class="step" data-step="4">
                     <!-- Step 5 content goes here -->
-                    <div class="run-information">
+                    <div class="frame-step run-information">
                         <h2 class="title">Informasi Lari</h2>
                         <p class="description">Silahkan isi data dibawah untuk memasukkan informasi lari seperti
                             racepack dan
@@ -308,7 +281,8 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="insurance" name="insurance" checked>
                                 <label for="insurance">
-                                    Saya Setuju untuk dihubungi untuk Pertanggungan Asuransi Jiwa oleh Perusahaan Asuransi
+                                    Saya Setuju untuk dihubungi untuk Pertanggungan Asuransi Jiwa oleh Perusahaan
+                                    Asuransi
                                 </label>
                             </div>
                         </div>
@@ -318,8 +292,8 @@
                     <div class="registration-frame-button">
                         <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
                         <a href="page/confirmed-data.html">
-                        <button type="button"
-                            class="btn btn-primary py-2 next-step"><strong>Selesai</strong></button>
+                            <button type="button"
+                                class="btn btn-primary py-2 next-step"><strong>Selesai</strong></button>
                         </a>
                     </div>
                 </div>
