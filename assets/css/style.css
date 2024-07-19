@@ -1,15 +1,24 @@
-@font-face {
+/* @font-face {
     font-family: 'Inter';
     src: url('../fonts/static/Inter-Regular.ttf'), ;
     font-weight: normal;
     font-style: normal;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
     --primary-color: #F37F0D;
     --secondary-color: #375AD9;
     --text-color: #666666;
     --background-color: #ffffff;
+}
+.bottom-radius-none{
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.text-black{
+    color: #000 !important;
 }
 
 * {
@@ -20,6 +29,7 @@
 
 body {
     font-family: 'inter', sans-serif !important;
+    background-color: #F2F6FF;
 }
 
 /* Navbar */
@@ -29,17 +39,15 @@ body {
 
 .navbar-brand {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .navbar-brand span {
     color: var(--primary-color);
-    font-weight: bold;
 }
 
 .navbar-brand .runner {
     color: var(--secondary-color);
-    font-weight: bold;
 }
 
 .navbar-nav .nav-item {
@@ -91,7 +99,7 @@ body {
 /* End Navbar */
 
 .information-title {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -108,8 +116,6 @@ body {
 /* Page Registration */
 .registration-section {
     padding: 2em 0;
-    min-height: 100vh;
-    background-color: #F2F6FF;
 }
 
 .progress-container {
@@ -247,7 +253,7 @@ body {
 .personal-data,
 .contact-and-medic,
 .run-information label {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 16px;
 }
 
@@ -429,12 +435,12 @@ body {
 
 
 
-.terms-conditions {
+.terms-conditions-bib-payment-success {
     padding: 1rem 0;
     background-color: #F2F6FF;
 }
 
-.terms-conditions .frame-step {
+.terms-conditions-bib-payment-success .frame-step {
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
@@ -442,17 +448,17 @@ body {
     margin-top: 2rem;
 }
 
-.terms-conditions .frame-step:nth-child(1) {
+.terms-conditions-bib-payment-success .frame-step:nth-child(1) {
     margin-top: 0px !important;
     padding: 20px 1.5rem;
 }
 
-.terms-conditions .frame-step:nth-child(3) {
+.terms-conditions-bib-payment-success .frame-step:nth-child(3) {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
-.terms-conditions .frame-step .title{
+.terms-conditions-bib-payment-success .frame-step .title {
     font-weight: bold;
     font-size: 24px;
     color: #375AD9 !important;
@@ -460,60 +466,70 @@ body {
     text-transform: uppercase;
 }
 
-.terms-conditions .frame-step .title label {
+.terms-conditions-bib-payment-success .frame-step .title label {
     font-weight: bold;
     color: var(--secondary-color);
 }
 
-.terms-conditions .frame-step label {
+.terms-conditions-bib-payment-success .frame-step label {
     font-weight: bold;
 }
 
-.terms-conditions .frame-step .category-runs {
+.terms-conditions-bib-payment-success .frame-step .term-check label {
+    color: var(--text-color);
+    font-weight: normal !important;
+}
+
+.terms-conditions-bib-payment-success .frame-step .term-check strong {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.terms-conditions-bib-payment-success .frame-step .category-runs {
     font-weight: bold;
     color: var(--primary-color);
     font-size: 20px;
 }
 
-.terms-conditions .frame-step .register-as {
+.terms-conditions-bib-payment-success .frame-step .register-as {
     background-color: #F4F7FF;
     margin: 15px 0;
     padding: 20px;
     border-radius: 8px;
 }
 
-.terms-conditions .frame-step .register-as b {
+.terms-conditions-bib-payment-success .frame-step .register-as b {
     font-size: 16px;
     padding: 0px 0px 1rem 0px;
 }
 
-.terms-conditions .frame-step .register-as p {
+.terms-conditions-bib-payment-success .frame-step .register-as p {
     font-size: 16px;
     color: #626262;
 }
 
-.terms-conditions .frame-step .term-title{
+.terms-conditions-bib-payment-success .frame-step .term-title {
     font-weight: bold;
     padding-left: 5px;
     color: var(--text-color);
 }
 
-.terms-conditions .frame-step .term-content {
+.terms-conditions-bib-payment-success .frame-step .term-content {
     list-style-type: disc;
     list-style: circle;
     color: var(--text-color);
 }
 
-.terms-conditions .frame-step .term-content ul {
+.terms-conditions-bib-payment-success .frame-step .term-content ul {
     padding: 10px 40px 0px;
 }
 
-.terms-conditions .line {
+.terms-conditions-bib-payment-success .line {
     height: 2px;
     width: 100%;
 }
 
-.terms-conditions .registration-frame-button {
+.terms-conditions-bib-payment-success .registration-frame-button {
     display: flex;
     justify-content: space-between;
     padding: 15px 1rem;
@@ -524,16 +540,118 @@ body {
     border-bottom-right-radius: 31px;
 }
 
+.terms-conditions-bib-payment-success .frame-step .term-check {
+    color: var(--text-color);
+}
+
 @media (max-width: 650px) {
-    .terms-conditions .frame-step {
-        padding: 10px !important;
+    .terms-conditions-bib-payment-success .frame-step {
+        padding: 25px 10px !important;
         border-radius: 0px !important;
     }
-    .terms-conditions .frame-step .title{
+
+    .terms-conditions-bib-payment-success .frame-step .title {
         font-size: 18px !important;
     }
-    .terms-conditions .frame-step .category-runs{
+
+    .terms-conditions-bib-payment-success .frame-step .category-runs {
         font-size: 16px !important;
+    }
+
+}
+
+/* BIB NUMBER */
+.terms-conditions-bib-payment-success .frame-step.bib-number {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.terms-conditions-bib-payment-success .frame-step.bib-number label {
+    margin: 0 !important;
+}
+
+.terms-conditions-bib-payment-success .frame-step.bib-number small {
+    padding: 0.7rem 0;
+}
+
+/* PAYMENT SUMMARY */
+.terms-conditions-bib-payment-success .frame-step.payment-summary {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.text-color {
+    color: var(--text-color) !important;
+}
+
+.terms-conditions-bib-payment-success .frame-step.payment-summary .total {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* PAYMENT SUCCESS */
+
+.terms-conditions-bib-payment-success .success-icon-container {
+    background-color: hsla(134, 100%, 50%, 0.293);
+    padding: 40px;
+    border-radius: 50%;
+    margin: auto;
+    display: inline-block;
+}
+
+.terms-conditions-bib-payment-success .success-icon-container img {
+    width: 90px;
+}
+.terms-conditions-bib-payment-success .payment-success-text h4{
+    margin: 10px 0 0 0;
+}
+.terms-conditions-bib-payment-success .payment-success-text p{
+    margin-bottom: 30px;
+    padding: 0px 30px;
+}
+
+.terms-conditions-bib-payment-success .frame-button-payment-success {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    border-radius: 9px;
+    margin-top: 30px;
+}
+.terms-conditions-bib-payment-success .frame-button-payment-success .btn-outline-warning {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    border-radius: 9px;
+}
+.terms-conditions-bib-payment-success .frame-button-payment-success .btn-outline-warning:hover {
+    border-color: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 9px;
+}
+.terms-conditions-bib-payment-success .frame-button-payment-success .btn-primary {
+    width: 211.47px;
+    background-color: var(--secondary-color);
+    border-radius: 9px;
+    margin-top: 10px;
+}
+.terms-conditions-bib-payment-success .frame-button-payment-success .btn-primary:hover {
+    background-color: #0c3dee;
+}
+
+@media (max-width: 650px) {
+
+    .terms-conditions-bib-payment-success .success-icon-container {
+        background-color: hsla(134, 100%, 50%, 0.293);
+        padding: 10px;
+        border-radius: 50%;
+        margin: auto;
+        display: inline-block;
+    }
+    .terms-conditions-bib-payment-success .success-icon-container img {
+        width: 40px;
+    }
+    .terms-conditions-bib-payment-success .payment-success-text p{
+        margin-bottom: 35px;
     }
 
 }
