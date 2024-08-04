@@ -13,12 +13,19 @@
     --text-color: #666666;
     --background-color: #ffffff;
 }
-.bottom-radius-none{
+
+.bottom-radius-none {
     border-bottom-right-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
 }
-.text-black{
+
+.text-black {
     color: #000 !important;
+}
+
+.form-control{
+    height: 45px !important;
+    box-shadow: 0 0 3.5px 0 rgba(0, 0, 0, 0.3) !important;
 }
 
 * {
@@ -35,6 +42,7 @@ body {
 /* Navbar */
 .navbar {
     box-shadow: 0 1px 3.2px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffffff !important;
 }
 
 .navbar-brand {
@@ -122,26 +130,28 @@ body {
     display: flex;
     justify-content: space-between;
     position: relative;
-    overflow: hidden;
     margin: 2em auto;
+    padding: 10px 0 60px;
 }
 
 .progress-container::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
+    top: 30%;
+    left: 50%;
+    width: 80%; 
     height: 4px;
     background: #ccc;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
 
 .step-progress {
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 30%;
+    width: 80%;
+    max-width: 700px;
+    left: 30px;
     transform: translateY(-50%);
     height: 4px;
     background: #4C77E5;
@@ -149,10 +159,17 @@ body {
     transition: width 0.3s ease;
 }
 
-.step-number {
+.step-number{
+    position: relative;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.step-number .rounded {
     background-color: rgb(255, 255, 255);
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,26 +182,69 @@ body {
     border: 2px solid #3498db;
     font-size: 20px;
 }
-
-@media (max-width: 650px) {
-    .step-number {
-        height: 50px;
-        width: 50px;
+.step-number .step-text{
+    width: 150px;
+    position: absolute;
+    top: 75px;
+    z-index: 1;
+    text-align: center;
+    color: #4C77E5 ;
+    font-weight: 400;
+    margin: auto;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+@media (max-width: 450px) {
+    .step-number .rounded {
+        height: 45px !important;
+        width: 45px !important;
         font-size: 14px;
-    }
-
-    .progress-container {
-        max-width: 350px;
     }
 }
 
-.step-number.active {
+@media (max-width: 650px) {
+    .step-number .rounded {
+        height: 55px;
+        width: 55px;
+        font-size: 14px;
+    }
+
+    .step-progress,
+    .progress-container::before {
+        top: 50%;
+    }
+    .col-progress{
+        padding: 0!important;
+    }
+}
+
+@media (max-width: 920px) {
+    .step-number .step-text {
+        display: none;
+    }
+    .step-progress,
+    .progress-container::before {
+        top: 50%;
+    }
+    .progress-container {
+        padding: 10px 0 !important;
+    }
+}
+
+.step-number.active .rounded {
     background-color: #F99D1B;
     border-color: #F99D1B;
     color: white;
 }
+.step-number.active .step-text {
+    color: #F99D1B;
+}
+.step-number.completed .step-text {
+    color: #4C77E5 ;
+}
 
-.step-number.completed {
+.step-number.completed .rounded{
     background-color: #4C77E5;
     border-color: #4C77E5;
     color: white;
@@ -218,7 +278,7 @@ body {
 .registration .description {
     font-size: 16px;
     font-weight: 400;
-    margin: 20px 0;
+    margin: 10px 0;
     color: var(--text-color);
 }
 
@@ -245,7 +305,7 @@ body {
 .personal-data,
 .contact-and-medic,
 .run-information {
-    padding: 2.3rem;
+    padding: 2.3rem 2.3rem 1rem 2.3rem;
 }
 
 
@@ -266,14 +326,33 @@ body {
 }
 
 .registration .line {
-    height: 2px;
     width: 100%;
+}
+
+.registration .upload-container {
+    border: 4px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 20px;
+}
+.registration .upload-container img {
+    max-height: 100%;
+}
+.registration .upload-placeholder {
+    color: var(--text-color);
+    font-weight: 400;
 }
 
 .registration .registration-frame-button {
     display: flex;
     justify-content: space-between;
-    padding: 15px 1rem;
+    padding: 15px 2.3rem;
     position: relative;
     background-color: #fff;
     box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
@@ -281,7 +360,16 @@ body {
     border-bottom-right-radius: 31px;
 }
 
-.registration .run-information .location-take {
+.registration .run-information .insurance-form p{
+    color: var(--text-color);
+    font-size: 16px;
+}
+.registration .run-information .community p{
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* .registration .run-information .location-take {
     padding: 15px;
     background-color: #F0F5FE;
     font-size: 16px;
@@ -300,7 +388,7 @@ body {
 
 .registration .run-information .location-take a {
     font-size: 15px;
-}
+} */
 
 @media (max-width: 650px) {
     .container {
@@ -361,6 +449,9 @@ body {
         margin: 20px 0;
         font-size: 15px;
     }
+    .registration .registration-frame-button {
+        padding: 15px 1em;
+    }
 }
 
 
@@ -372,6 +463,12 @@ body {
 .confirmed-data {
     padding: 1em 0;
     background-color: #F2F6FF;
+}
+.confirmed-data .form-control {
+    height: 45px !important;
+    box-shadow: none !important;
+    border-radius: 9px;
+    background-color: #F4F7FF !important;
 }
 
 .confirmed-data .frame-step {
@@ -410,7 +507,7 @@ body {
 .confirmed-data .registration-frame-button {
     display: flex;
     justify-content: space-between;
-    padding: 15px 1rem;
+    padding: 15px 2.3rem;
     position: relative;
     background-color: #fff;
     box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
@@ -453,7 +550,7 @@ body {
     padding: 20px 1.5rem;
 }
 
-.terms-conditions-bib-payment-success .frame-step:nth-child(3) {
+.terms-conditions-bib-payment-success .frame-step:nth-child(4) {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
@@ -532,7 +629,7 @@ body {
 .terms-conditions-bib-payment-success .registration-frame-button {
     display: flex;
     justify-content: space-between;
-    padding: 15px 1rem;
+    padding: 15px 2.3rem;
     position: relative;
     background-color: #fff;
     box-shadow: 0 0 4px 0 hwb(0 0% 100% / 0.25);
@@ -603,10 +700,12 @@ body {
 .terms-conditions-bib-payment-success .success-icon-container img {
     width: 90px;
 }
-.terms-conditions-bib-payment-success .payment-success-text h4{
+
+.terms-conditions-bib-payment-success .payment-success-text h4 {
     margin: 10px 0 0 0;
 }
-.terms-conditions-bib-payment-success .payment-success-text p{
+
+.terms-conditions-bib-payment-success .payment-success-text p {
     margin-bottom: 30px;
     padding: 0px 30px;
 }
@@ -617,23 +716,27 @@ body {
     border-radius: 9px;
     margin-top: 30px;
 }
+
 .terms-conditions-bib-payment-success .frame-button-payment-success .btn-outline-warning {
     border-color: var(--primary-color) !important;
     color: var(--primary-color) !important;
     border-radius: 9px;
 }
+
 .terms-conditions-bib-payment-success .frame-button-payment-success .btn-outline-warning:hover {
     border-color: var(--primary-color) !important;
     background-color: var(--primary-color) !important;
     color: white !important;
     border-radius: 9px;
 }
+
 .terms-conditions-bib-payment-success .frame-button-payment-success .btn-primary {
     width: 211.47px;
     background-color: var(--secondary-color);
     border-radius: 9px;
     margin-top: 10px;
 }
+
 .terms-conditions-bib-payment-success .frame-button-payment-success .btn-primary:hover {
     background-color: #0c3dee;
 }
@@ -647,11 +750,105 @@ body {
         margin: auto;
         display: inline-block;
     }
+
     .terms-conditions-bib-payment-success .success-icon-container img {
         width: 40px;
     }
-    .terms-conditions-bib-payment-success .payment-success-text p{
+
+    .terms-conditions-bib-payment-success .payment-success-text p {
         margin-bottom: 35px;
+    }
+
+}
+
+
+/* footer */
+footer {
+    background-color: #ffffff;
+    padding: 60px 16px 20px;
+}
+
+footer span {
+    color: var(--primary-color);
+}
+
+footer .runner {
+    color: var(--secondary-color);
+}
+
+footer h5,
+.logo {
+    font-weight: 700;
+    margin-bottom: 15px !important;
+}
+
+footer ul li a,
+a {
+    color: #000000;
+    list-style: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #f9b233;
+}
+
+footer .social-media-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 10px 0;
+    color: #f9b233;
+    /* Adjust text color to match the icon color */
+}
+
+footer .social-media-link:hover {
+    text-decoration: none;
+}
+
+footer .social-media-icon {
+    position: relative;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+footer .social-media-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f9b233;
+    border-radius: 8px;
+    opacity: .3;
+    z-index: 2;
+}
+
+footer .social-media-icon i,
+.event-manage {
+    color: #f9b233;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+footer .social-media-link span,
+.sponsor p,
+.copyright {
+    color: #525252;
+}
+
+@media (max-width: 800px) {
+
+    footer {
+        padding: 60px 16px;
+    }
+
+    .mt-mobile-15 {
+        margin-top: 25px !important;
     }
 
 }

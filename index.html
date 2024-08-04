@@ -7,6 +7,9 @@
     <title>LABS.CO - Registration</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    </style>
 </head>
 
 <body>
@@ -50,76 +53,62 @@
 
     <section class="registration-section">
         <div class="container">
-            <div class="col-12 information">
+            <div class="col-12 information mx-auto">
                 <h4 class="font-weight-bold information-title">Pendaftaran Event</h4>
-                <p class="information-description">Silahkan masukkan informasi pribadi anda dengan benar secara step by step.</p>
-                <div class="progress-container">
-                    <div class="step-progress" id="step-progress"></div>
-                    <div class="step-number active" data-step="1">1</div>
-                    <div class="step-number" data-step="2">2</div>
-                    <div class="step-number" data-step="3">3</div>
-                    <div class="step-number" data-step="4">4</div>
+                <p class="information-description">Silahkan masukkan informasi pribadi anda dengan benar secara step by
+                    step.</p>
+                <div class="col-12 col-lg-9 mx-auto col-progress">
+                    <div class="progress-container">
+                        <div class="step-progress" id="step-progress"></div>
+                        <div class="step-number active" data-step="1">
+                            <div class="rounded">1</div>
+                            <div class="step-text">Akun</div>
+                        </div>
+                        <div class="step-number" data-step="2">
+                            <div class="rounded">2</div>
+                            <div class="step-text">Data Diri Peserta</div>
+                        </div>
+                        <div class="step-number" data-step="3">
+                            <div class="rounded">3</div>
+                            <div class="step-text">Kontak Darurat Dan Informasi Medis</div>
+                        </div>
+                        <div class="step-number" data-step="4">
+                            <div class="rounded">4</div>
+                            <div class="step-text">Pengambilan Racepack</div>
+                        </div>
+                        <div class="step-number" data-step="5">
+                            <div class="rounded">5</div>
+                            <div class="step-text">Konfirmasi Data</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <form id="multiStepForm" class="registration">
                 <div class="step active" data-step="1">
-                    <div class="frame-step run-category">
-                        <span class="title">Kategori Lari</span>
-                        <p class="description">Silahkan pilih kategori lari anda. Ada 2 Kategori yaitu Fun match dan
-                            Kompetisi. Jangan sampai salah pilih.</p>
-
-                        <legend class="category-title text-black">Kompetisi</legend>
-                        <fieldset>
-                            <span class="category-title-2">Singel</span>
-                            <div class="form-check mt-3">
-                                <input type="radio" id="single10k" name="kompetisi" class="form-check-input">
-                                <label for="single10k" class="form-check-label option-label">10K — Rp 575.000</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="radio" id="single5k" name="kompetisi" class="form-check-input">
-                                <label for="single5k" class="form-check-label option-label">5K — Rp 525.000</label>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <span class="category-title-2">Group</span>
-                            <div class="form-check mt-3">
-                                <input type="radio" id="group10k" name="kompetisi" class="form-check-input">
-                                <label for="group10k" class="form-check-label option-label">5K 5K (4 runners) — Rp
-                                    2.000.000</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" id="group5k" name="kompetisi" class="form-check-input">
-                                <label for="group5k" class="form-check-label option-label">10K 5K (4 runners) — Rp
-                                    2.200.000</label>
-                            </div>
-                        </fieldset>
-                        <legend class="category-title text-black">Santai / Seru-seruan</legend>
-                        <fieldset>
-                            <span class="category-title-2">Group</span>
-                            <div class="form-check mt-3">
-                                <input type="radio" id="single5k" name="kompetisi" class="form-check-input">
-                                <label for="single5k" class="form-check-label option-label">Group 5K (2 runners) -
-                                    Rp 1,050,000</label>
-                            </div>
-                        </fieldset>
-                    </div>
                     <div class="frame-step registration-form">
                         <h2 class="title text-primary">Akun Peserta</h2>
                         <p class="description">Silahkan isi data dibawah untuk akun anda. Jika ada <span
                                 class="text-danger">*</span> berarti
                             data wajib diisi</p>
                         <div class="form-group">
-                            <label for="email">Alamat Email <span class="text-danger">*</span></label>
+                            <label for="email">Email Address <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
                         </div>
-                        <button class="btn btn-primary">Kirim Kode Verifikasi</button>
+                        <div class="form-group">
+                            <label for="email">Number Phone <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Password <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Placeholder" required>
+                        </div>
                     </div>
 
                     <div class="line"></div>
                     <div class="registration-frame-button justify-content-end">
-                        <button type="button"
-                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
+                        <button type="button" class="btn btn-primary py-2 next-step"><strong>Selanjutnya <i
+                                    class="fas fa-arrow-right"></i></strong></button>
                     </div>
                 </div>
 
@@ -127,8 +116,15 @@
                     <!-- Step 3 content goes here -->
                     <div class="frame-step personal-data">
                         <span class="title">Data Diri Peserta</span>
-                        <p class="description">Silahkan isi data dibawah untuk memasukkan data diri anda. Jika ada <span
+                        <p class="description">Silahkan isi data dibawah untuk memasukkan data diri anda. Jika ada<span
                                 class="text-danger">*</span> berarti data wajib diisi.</p>
+                        <div class="form-group">
+                            <div class="upload-container">
+                                <img src="https://via.placeholder.com/150" alt="Profile Photo">
+                            </div>
+                            <div class="upload-placeholder">Silahkan isi photo<span class="text-danger">*</span> dengan
+                                format 5mb maksimum dan berbentuk JPG</div>
+                        </div>
                         <div class="form-group">
                             <label for="firstName">Nama Depan <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="firstName" placeholder="Placeholder" required>
@@ -175,9 +171,10 @@
 
                     <div class="line"></div>
                     <div class="registration-frame-button">
-                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong><i
+                                    class="fas fa-arrow-left"></i> Kembali</strong></button>
+                        <button type="button" class="btn btn-primary py-2 next-step"><strong>Selanjutnya <i
+                                    class="fas fa-arrow-right"></i></strong></button>
                     </div>
                 </div>
 
@@ -218,9 +215,10 @@
                     </div>
                     <div class="line"></div>
                     <div class="registration-frame-button">
-                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
-                        <button type="button"
-                            class="btn btn-primary py-2 next-step"><strong>Selanjutnya</strong></button>
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong><i
+                                    class="fas fa-arrow-left"></i> Kembali</strong></button>
+                        <button type="button" class="btn btn-primary py-2 next-step"><strong>Selanjutnya <i
+                                    class="fas fa-arrow-right"></i></strong></button>
                     </div>
 
                 </div>
@@ -242,38 +240,14 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label>Pengambilan Paket Lari <span class="text-danger">*</span></label><br>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="pickup" name="pickup"
-                                    value="ambillitempat" checked>
-                                <label class="form-check-label" for="pickup">Ambil ditempat</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group location-take" id="lokasi-pengambilan">
-                            <label>Lokasi Pengambilan</label>
-                            <p>Perkantoran Kebayoran Baru Mall No. 29, RT.4/RW.7, Gunung, Kec. Kby. Baru, Kota Jakarta
-                                Selatan, Daerah Khusus Ibukota Jakarta 12120
-                            </p>
-                            <a href="#">Lihat lebih detail...</a>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="time">Pilih jam pengambilan</label>
-                            <select class="form-control" id="time" name="time">
-                                <option value="" disabled selected>Placeholder</option>
-                                <!-- Add more options here -->
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="community">Nama Komunitas Lari</label>
+                        <div class="form-group community">
+                            <label for="community">Nama Komunitas Lari</label><br>
+                            <p>Jika ada silahkan isi dengan benar</p>
                             <input type="text" class="form-control" id="community" name="community"
                                 placeholder="Jika ada silahkan isi dengan benar">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group insurance-form">
                             <label>Asuransi <span class="text-danger">*</span></label><br>
                             <p>Centang kotak ☑ untuk mendapatkan gratis Asuransi Jiwa & Asuransi Kecelakaan Diri dari
                                 Perusahaan Asuransi bagi para pelari selama Labsco Run 2024. Peserta akan mendapatkan
@@ -290,18 +264,236 @@
                     </div>
                     <div class="line"></div>
                     <div class="registration-frame-button">
-                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong>Kembali</strong></button>
-                        <a href="page/confirmed-data.html">
-                            <button type="button"
-                                class="btn btn-primary py-2 next-step"><strong>Selesai</strong></button>
-                        </a>
+                        <button type="button" class="btn btn-secondary py-2 prev-step"><strong><i
+                                    class="fas fa-arrow-left"></i> Kembali</strong></button>
+                        <button type="button" class="btn btn-primary py-2 next-step">
+                            <strong>Selanjutnya <i class="fas fa-arrow-right"></i></strong></button>
                     </div>
                 </div>
 
 
+                <div class="step confirmed-data" data-step="5">
+                    <div class="frame-step">
+                        <h4 class="title">Informasi Data Pribadi</h4>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control" id="name" placeholder="Sultan Jordy Prioadi"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="sultan@jordy.prioadi"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">No HP</label>
+                            <input type="text" class="form-control" id="phone" placeholder="0812345678910" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Jenis Kelamin</label>
+                            <input type="text" class="form-control" id="gender" placeholder="Laki Laki" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">Tanggal Lahir</label>
+                            <input type="text" class="form-control" id="birthdate" placeholder="20 Agustus 2003"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ktp">KTP/Pasport</label>
+                            <input type="text" class="form-control" id="ktp" placeholder="1234567891234567891234"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nationality">Kewarganegaraan</label>
+                            <input type="text" class="form-control" id="nationality" placeholder="Indonesia" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Kota</label>
+                            <input type="text" class="form-control" id="city" placeholder="Kota Bogor" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="province">Provinsi</label>
+                            <input type="text" class="form-control" id="province" placeholder="Cokelat Inc" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profession">Pekerjaan</label>
+                            <input type="text" class="form-control" id="profession" placeholder="Project Manager"
+                                readonly>
+                        </div>
+                    </div>
+
+                    <div class="frame-step">
+                        <h4 class="title">Informasi Wali dan Riwayat Medis</h4>
+
+                        <div class="form-group">
+                            <label for="guardian-name">Nama Wali</label>
+                            <input type="text" class="form-control" id="guardian-name" placeholder="Ilham Bahrudin"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardian-phone">No HP Wali</label>
+                            <input type="text" class="form-control" id="guardian-phone" placeholder="0812345678910"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardian-relationship">Hubungan Wali</label>
+                            <input type="text" class="form-control" id="guardian-relationship" placeholder="Saudara"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="blood-type">Golongan Darah</label>
+                            <input type="text" class="form-control" id="blood-type" placeholder="O" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medical-history">Riwayat Medis</label>
+                            <input type="text" class="form-control" id="medical-history"
+                                placeholder="Alhamdulillah Sehat Walafiat" readonly>
+                        </div>
+                    </div>
+
+                    <div class="frame-step">
+                        <h4 class="title">Informasi Event Lari</h4>
+
+                        <div class="form-group">
+                            <label for="category">Kategori</label>
+                            <input type="text" class="form-control" id="category" placeholder="FUN -- COUPLE" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="size">Ukuran baju</label>
+                            <input type="text" class="form-control" id="size" placeholder="M" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pickup-location">Pengambilan Paket</label>
+                            <input type="text" class="form-control" id="pickup-location" placeholder="Ditempat"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pickup-time">1 August 2024 - Afternoon Session (4PM - 8PM)</label>
+                            <input type="text" class="form-control" id="pickup-time"
+                                placeholder="1 August 2024 - Afternoon Session (4PM - 8PM)" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="community">Nama Komunitas Lari</label>
+                            <input type="text" class="form-control" id="community" placeholder="GITHUB-nya BSI"
+                                readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="insurance-agreement">Saya Setuju untuk dihubungi untuk Pertanggungan Asuransi
+                                Jiwa
+                                oleh Perusahaan Asuransi</label>
+                            <input type="text" class="form-control" id="insurance-agreement" placeholder="Ya" readonly>
+                        </div>
+
+                    </div>
             </form>
+            <div class="line"></div>
+            <div class="registration-frame-button">
+                <button type="button" class="btn btn-secondary py-2 prev-step">
+                    <strong><i class="fas fa-arrow-left"></i> Kembali</strong>
+                </button>
+                <a class="btn btn-primary py-2 next-step"
+                    href="page/terms-conditions.html"><strong>Selanjutnya <i class="fas fa-arrow-right"></i></strong></a>
+            </div>
         </div>
     </section>
+    <div class="col-12 text-center">
+        <h6>Sudah punya akun? <a class="" style="color: #F99D1B;" href="">Login</a></h6>
+    </div>
+    <br>
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 p-1">
+                    <div class="logo d-flex align-items-center">
+                        <img src="../assets/images/labsco-footer.png">
+                        <h5 class="ml-3 m-0"><span>Labsco</span> <span class="runner">Sport</span></h5>
+                    </div>
+                    <p class="">Lorem ipsum dolor sit amet consectetur. Eget nisi sed suspendisse condimentum sed enim.
+                        Sagittis ultricies feugiat eget fringilla purus lorem enim lacus eu. Euismod quis at consectetur
+                        eu lacus adipiscing egestas pulvinar. Massa purus mauris dolor.</p>
+                    <a href="#" class="event-manage">Event Manage by Labsco Runner</a>
+                </div>
+                <div class="col-lg-3 mx-auto mt-mobile-15 p-1">
+                    <h5>Event</h5>
+                    <p class=""> Menjalankan Even Peparnas 2024 <br>
+                        Monday ,4 Oktober 2024 Sollo <br>
+                        Stadion Manahan Solo <br>
+                        Phone Number <br>
+                        Email
+                    </p>
+                </div>
+                <div class="col-lg-2 mx-auto mt-mobile-15 p-1">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Race Expo</a></li>
+                        <li><a href="#">Galeri</a></li>
+                        <li><a href="#">Lorem Ipsum</a></li>
+                        <li><a href="#">Dolor Sit Amet</a></li>
+                        <li><a href="#">Eget nisi sed enim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mx-auto mt-mobile-15 p-1">
+                    <h5>Social Media</h5>
+                    <a href="#" class="social-media-link">
+                        <div class="social-media-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Social Media</span>
+                    </a>
+                    <a href="#" class="social-media-link">
+                        <div class="social-media-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Social Media</span>
+                    </a>
+                    <a href="#" class="social-media-link">
+                        <div class="social-media-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Social Media</span>
+                    </a>
+                    <a href="#" class="social-media-link">
+                        <div class="social-media-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Social Media</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 80px; ">
+                <div class="col-lg-3 copyright p-1">
+                    <p class="m-0 font-weight-bold">&copy; (Github Running) 2024. All right reserved</p>
+                </div>
+                <div class="col-lg-3 mx-auto sponsor p-1">
+                    <p class="m-0">Sponsor Utama : : <span class="sponsors">★ ★ ★ ★ ★</span></p>
+                </div>
+                <div class="col-lg-2 mx-auto"></div>
+                <div class="col-lg-2 mx-auto"></div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
