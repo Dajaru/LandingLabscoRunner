@@ -140,7 +140,7 @@ body {
     top: 30%;
     left: 50%;
     width: 80%; 
-    height: 4px;
+    height: 2px;
     background: #ccc;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -153,7 +153,7 @@ body {
     max-width: 700px;
     left: 30px;
     transform: translateY(-50%);
-    height: 4px;
+    height: 2px;
     background: #4C77E5;
     z-index: 2;
     transition: width 0.3s ease;
@@ -173,7 +173,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 12px !important;
     z-index: 3;
     position: relative;
     cursor: pointer;
@@ -188,7 +188,7 @@ body {
     top: 75px;
     z-index: 1;
     text-align: center;
-    color: #4C77E5 ;
+    color: #375AD9 ;
     font-weight: 400;
     margin: auto;
     font-size: 15px;
@@ -390,7 +390,7 @@ body {
     font-size: 15px;
 } */
 
-@media (max-width: 650px) {
+@media (max-width: 575.98px) {
     .container {
         padding: 0 !important;
     }
