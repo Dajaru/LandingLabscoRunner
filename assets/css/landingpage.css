@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+    font-family: 'inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header .navbar .navbar-brand span{
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+header .navbar .nav-item{
+    padding: 5px 10px;
+}
+header .navbar .nav-item .nav-link{
+    font-size: 14px;
+    font-weight: 500;   
+    color: white;
+}
+
+.landing{
+    background: url('../images/landing.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.landing .event{
+    color: white;
+}
+.landing .event h1{
+    font-size: 64px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+
+.landing .event .timer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.landing .timer div {
+    flex: 1;
+}
