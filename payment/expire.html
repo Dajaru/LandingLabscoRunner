@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYMENT BERAKHIR</title>
+    <link rel="stylesheet" href="../assets/css/payment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="type">
+            <dotlottie-player src="https://lottie.host/17e7da75-77c9-49f6-8b12-4471febe1608/MeQx026NRj.json" 
+                background="transparent" speed="1" autoplay failed></dotlottie-player>
+
+            <div class="text">
+                <h1>Pembayaran Berakhir</h1>
+                <p>
+                    Tampaknya pesanan kamu sudah berakhir. Mohon maaf, pendaftaran kamu tidak dapat kami proses lebih lanjut.
+                </p>
+            </div>
+        </div>
+
+        <div class="card failed">
+            <h2>Rincian Pembayaran</h2>
+            <table>
+                <tr>
+                    <th>Status</th>
+                    <td style="color: #ff1f1f;">{{ $status }}</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <h4>{{ $total }}</h4>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Nomor Pemesanan</th>
+                    <td>{{ $order_id }}</td>
+                </tr>
+                <tr>
+                    <th>Metode Pembayaran</th>
+                    <td>{{ $payment_method }}</td>
+                </tr>
+                <tr>
+                    <th>Waktu Berakhir</th>
+                    <td>{{ $expire_time }}</td>
+                </tr>
+                <tr>
+                    <th>Nama Merchant</th>
+                    <td>{{ config('app.name') }}</td>
+                </tr>
+                <tr>
+                    <th>Nama Pembeli</th>
+                    <td>{{ $name }}</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <td>{{ $product }}</td>
+                </tr>
+                <tr>
+                    <th>Jumlah</th>
+                    <td>{{ $quantity }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="action">
+            <a href="{{ route('home') }}" class="btn primary">
+                Kembali ke Beranda
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+</body>
+
+</html>

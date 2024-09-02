@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.type h1 {
+    font-size: 24px;
+}
+
+.type p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.card {
+    background-color: #F4F7FF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 20px !important;
+    color: #375AD9;
+}
+
+.card.pending {
+    background-color: #fffaf0;
+}
+
+.card.pending h2 {
+    color: #FFA800;
+}
+
+.card.failed {
+    background-color: #FFF0F0;
+}
+
+.card.failed h2 {
+    color: #ff1f1f;
+}
+
+.list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.list:last-child {
+    margin-bottom: 0;
+}
+
+.list p {
+    font-size: 16px;
+    color: #000000;
+}
+
+.list p:last-child {
+    font-weight: 600;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #C5D7F8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.card.pending hr {
+    border-top: 1px solid #FCD68B;
+}
+
+.card.failed hr {
+    border-top: 1px solid #ffbdbd;
+}
+
+dotlottie-player {
+    width: 120px;
+    height: 120px;
+}
+
+dotlottie-player[pending] {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+dotlottie-player[failed] {
+    width: 110px;
+    height: 110px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.success {
+    background-color: #009745;
+    color: #fff;
+}
+
+.primary {
+    background-color: #375AD9;
+    color: #fff;
+}
+
+.secondary {
+    background-color: #F4F7FF;
+    color: #000;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th {
+    text-align: left;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+}
+
+table td {
+    padding: 12px 0;
+    font-size: 16px;
+    color: #000000;
+    text-align: right;
+    font-weight: bold;
+}
+
+tbody tr:first-child td,
+tbody tr:first-child th {
+    padding-top: 0;
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+    padding-bottom: 0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #C5D7F8;
+}
+
+@media (max-width: 600.98px) {
+    .card {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .action {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 400.98px) {
+    .action {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    dotlottie-player {
+        width: 100px;
+        height: 100px;
+    }
+
+    .type .text {
+        margin-top: 10px;
+    }
+
+    .type h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .type p {
+        font-size: 14px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+    }
+}
+
+@media print {
+    .action {
+        display: none;
+    }
+}
