@@ -1,53 +1,291 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-body{
+:root {
+    --bay-of-many-900: #27357D;
+    --bay-of-many-800: #2B3CA2;
+    --bay-of-many-600: #375AD9;
+    --bay-of-many-500: #4C77E5;
+    --text-white-color: #ffffff;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
     font-family: 'inter', sans-serif;
     padding: 0;
     margin: 0;
 }
 
-header .navbar .navbar-brand span{
+header .navbar {
+    padding: 30px 0px;
+}
+
+.header
+
+/* Tambahkan warna background atau properti lainnya untuk navbar saat di-scroll */
+.navbar-scrolled {
+    background-color: #f8f9fa !important;
+    /* Contoh warna latar belakang baru */
+    transition: background-color 0.3s ease-in-out;
+    /* Transisi yang halus saat perubahan warna */
+}
+
+
+header .navbar .navbar-brand span {
     font-weight: bold;
     font-size: 16px;
     font-weight: 600;
     color: white;
 }
-header .navbar .nav-item{
+
+header .navbar .nav-item {
     padding: 5px 10px;
 }
-header .navbar .nav-item .nav-link{
+
+header .navbar .nav-item .nav-link {
     font-size: 14px;
-    font-weight: 500;   
+    font-weight: 500;
     color: white;
 }
 
-.landing{
+.landing {
     background: url('../images/landing.png') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 150px 0;
 }
-.landing .event{
+
+.landing .container {
+    position: relative;
+}
+
+.landing .event {
     color: white;
 }
-.landing .event h1{
+
+.landing .event small {
+    font-weight: bold;
+}
+
+.landing .event h1 {
     font-size: 64px;
     font-weight: bold;
     color: white;
     text-transform: capitalize;
 }
 
-.landing .event .timer {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    color: white;
+.landing .event .btn-one {
+    padding: 15px 15px !important;
+    background-color: var(--bay-of-many-900);
+    color: var(--text-white-color);
     font-weight: bold;
+    font-size: 15px !important;
+    text-transform: uppercase;
+}
+
+.landing .event .btn-two {
+    padding: 15px 15px !important;
+    color: var(--text-white-color);
+    font-weight: bold;
+    font-size: 15px !important;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.landing .countdown {
+    margin-bottom: 16px;
+}
+
+.landing .countdown .row .col {
     text-align: center;
     margin-bottom: 10px;
 }
-.landing .timer div {
-    flex: 1;
+
+.landing .countdown .row .col span {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.landing .countdown .row .col span:nth-last-child(1) {
+    font-size: 20px !important;
+    font-weight: 400;
+}
+
+.landing .powered {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    bottom: -170px;
+    right: 0;
+    color: #FFF8EB;
+}
+
+.event-info {
+    position: relative;
+}
+
+.event-info .container {
+    padding: 0;
+}
+
+.event-info .info-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    color: var(--text-white-color);
+    font-weight: 400;
+}
+
+.event-info .info-card:nth-child(1) {
+    background-color: var(--bay-of-many-900);
+}
+
+.event-info .info-card:nth-child(1)::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: var(--bay-of-many-900);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.event-info .info-card:nth-child(2) {
+    background-color: var(--bay-of-many-600);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 991px) {
+    .event-info .info-card:nth-child(2) {
+        display: none !important;
+    }
+}
+
+.event-info .info-card:nth-child(3) {
+    background-color: var(--text-white-color);
+    color: #343434;
+}
+
+.event-info .info-card:nth-child(3)::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+.content .title-run-schedules {
+    text-align: center;
+    padding: 50px 0 30px;
+}
+
+.content .title-run-schedules h5 {
+    color: var(--bay-of-many-800);
+    margin-bottom: -2px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.content .title-run-schedules h3 {
+    color: var(--bay-of-many-800);
+    margin-bottom: 5px;
+    font-size: 40px;
+    color: #474747;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.content .run-category {
+    padding: 30px 0px;
+}
+
+.content .run-category .card {
+    border-color: var(--bay-of-many-500);
+    border-radius: 10px;
+    padding: 30px 0px 30px 10px;
+}
+.content .run-category .card .row {
+    margin: 0 !important;
+}
+
+.content .run-category .active {
+    background-color: var(--bay-of-many-900);
+    color: var(--text-white-color) !important;
+}
+
+.content .run-category .card .category h6 {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content .run-category .card .category small {
+    font-size: 16px;
+}
+
+.content .run-category .card .price {
+    position: relative;
+    text-align: center !important;
+}
+
+.content .run-category .card .price .original-price {
+    font-size: 16px;
+    position: relative;
+    font-weight: bold;
+    color: red;
+    top: 8px;
+}
+.content .run-category .card .price .original-price::before {
+    content: '';
+    width: 120%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    background-color: red;
+}
+.content .run-category .card .price .discount {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.content .schedules{
+    padding: 30px 0px;
+}
+.content .schedules .card{
+    border-radius: 10px;
+    border-color: var(--bay-of-many-500);
+    padding: 70px 10px;
+    text-align: center;
+    background-size: cover;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--text-white-color);
+    font-weight: bold;
+}
+.content .schedules .card h5{
+    font-size: 24px;
+}
+.content .schedules .card small{
+    font-weight: normal !important;
+    font-size: 16px;
+}
+
+.content .prizes{
+    background-color: var(--bay-of-many-900);
+    padding: 20px 0;
 }
