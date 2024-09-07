@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMAIL INVOICE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.3;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table {
+            border-collapse: separate;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+        }
+
+        table td {
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            vertical-align: top;
+        }
+
+        body {
+            background-color: #F2F6FF;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            background-color: #F2F6FF;
+            width: 100%;
+        }
+
+        .container {
+            margin: 0 auto !important;
+            max-width: 640px;
+            padding: 0;
+            padding-top: 24px;
+            width: 640px;
+        }
+
+        .content {
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            max-width: 640px;
+            padding: 0;
+        }
+
+        .main {
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 20px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-top: 5px solid #375AD9;
+        }
+
+        .wrapper {
+            padding: 25px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        .footer {
+            clear: both;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #6e7178;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .button-primary {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            background: #375AD9;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .bill {
+            border-radius: 10px;
+            background: #F2F6FF;
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+
+        .bill tr td {
+            padding: 10px 0;
+            font-size: 15px;
+        }
+
+        .bill tr td[align="right"] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+        <tbody>
+            <tr>
+                <td class="container">
+                    <div class="content">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <img src="https://run.fahrianggara.my.id/storage/photos/icon/logo.png" class="logo">
+                        </div>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
+                            <tr>
+                                <td class="wrapper">
+                                    <h2>Halo, Fahri Anggara!</h2>
+                                    <p>
+                                        Ini adalah pemberitahuan bahwa pesanan kamu telah dibuat pada tanggal {{ sekian }}.
+                                    </p>
+
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="bill">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>Nomor Pemesanan</td>
+                                                        <td align="right">66c3b86c98d9d</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jumlah</td>
+                                                        <td align="right">4 Partisipasi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total Pembayaran</td>
+                                                        <td align="right">Rp 1.000.000</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <p>
+                                        Kamu bisa melakukan pembayaran disini.
+                                    </p>
+                                    <a class="button-primary" href="#">
+                                        Bayar Sekarang
+                                    </a>
+                                    <p>
+                                        Perlu di ingat, pesanan ini akan kadaluarsa dalam 24 jam. Silahkan segera melakukan pembayaran. Agar pesanan kamu dapat segera kami proses.
+                                    </p>
+                                    <p style="margin-bottom:20px;">
+                                        Hormat Kami,<br>
+                                        <b>Team Labsco Sport.</b>
+                                    </p>
+
+                                    <hr>
+
+                                    <p style="margin-top:20px; color: #6e7178; font-size: 15px;">
+                                        Jika kamu memiliki masalah atau pertanyaan mengenai pembayaran, silahkan hubungi <a href="https://wa.me/6281234567890">Tim Support kami</a> melalui WhatsApp untuk mendapatkan bantuan lebih lanjut.
+                                    </p>
+
+                                    <p style="color: #6e7178; font-size: 15px; margin-bottom: 0;">
+                                        Apabila tombol diatas tidak berfungsi, silahkan klik link dibawah ini atau copy paste ke browser kamu.
+                                        <a href="#" style="font-size: 15px;">
+                                            https://run.fahrianggara.my.id/invoice/66c3b86c98d9d
+                                        </a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="footer">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="content-block powered-by">
+                                        © Labsco Sport 2024. All right reserved
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
