@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYMENT SUCCESS</title>
+    <link rel="stylesheet" href="../assets/css/payment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="type">
+            <dotlottie-player src="https://lottie.host/8d962352-3e6d-4f4b-8f70-687ced8f5499/nsHSqPFkJO.json" 
+                background="transparent" speed="1" autoplay></dotlottie-player>
+
+            <div class="text">
+                <h1>Pembayaran Berhasil</h1>
+                <p>
+                    Terima kasih telah melakukan pembayaran. Silakan periksa email yang kamu daftarkan untuk informasi lebih lanjut.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Rincian Pembayaran</h2>
+            <table>
+                <tr>
+                    <th>Status</th>
+                    <td style="color: #009745;">{{ $status }}</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <h4>{{ $total }}</h4>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Nomor Pemesanan</th>
+                    <td>{{ $order_id }}</td>
+                </tr>
+                <tr>
+                    <th>Metode Pembayaran</th>
+                    <td>{{ $payment_method }}</td>
+                </tr>
+                <tr>
+                    <th>Waktu Pembayaran</th>
+                    <td>{{ $payment_time }}</td>
+                </tr>
+                <tr>
+                    <th>Nama Merchant</th>
+                    <td>{{ config('app.name') }}</td>
+                </tr>
+                <tr>
+                    <th>Nama Pembeli</th>
+                    <td>{{ $name }}</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <td>{{ $product }}</td>
+                </tr>
+                <tr>
+                    <th>Jumlah</th>
+                    <td>{{ $quantity }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="action">
+            <button type="button" onclick="window.print()" class="btn primary">
+                Cetak
+            </button>
+            <a href="{{ route('home') }}" class="btn success">
+                Selesai
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+</body>
+
+</html>

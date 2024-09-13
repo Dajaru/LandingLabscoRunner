@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMAIL TICKET</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style media="all" type="text/css">
+        body {
+            font-family: Inter, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.3;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table {
+            border-collapse: separate;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+        }
+
+        table td {
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            vertical-align: top;
+        }
+
+        body {
+            background-color: #F2F6FF;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            background-color: #F2F6FF;
+            width: 100%;
+        }
+
+        .container {
+            margin: 0 auto !important;
+            max-width: 640px;
+            padding: 0;
+            padding-top: 24px;
+            width: 640px;
+        }
+
+        .content {
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            max-width: 640px;
+            padding: 0;
+        }
+
+        .main {
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 20px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-top: 5px solid #375AD9;
+        }
+
+        .wrapper {
+            padding: 25px;
+        }
+
+        .footer {
+            clear: both;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #6e7178;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        .bill {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .bill tr td {
+            padding: 10px 0;
+            font-size: 15px;
+        }
+
+        .bill tr td[align="right"] {
+            font-weight: bold;
+        }
+
+        .ticket-list {
+            width: 100%;
+        }
+
+        .ticket {
+            width: 100%;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #ccc;
+            border-top: 4px solid #F37F0D;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .ticket:last-child {
+            margin-bottom: 0;
+        }
+
+        .ticket-info {
+            margin-bottom: 10px;
+        }
+
+        [last] {
+            margin-bottom: 0;
+        }
+
+        .ticket-info img {
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top: 3px;
+            margin-right: 2px;
+        }
+
+        .ticket-qr {
+            text-align: right;
+            width: 20%;
+        }
+
+        .ticket-qr img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .button-primary {
+            display: block;
+            margin-top: 15px;
+            padding: 13px 20px;
+            background: #375AD9;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            width: auto;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 639.48px) {
+            .container {
+                width: 100% !important;
+            }
+
+            .content {
+                max-width: 100% !important;
+            }
+
+            .main {
+                border-radius: 0;
+            }
+
+            .logo {
+                width: 230px;
+            }
+        }
+
+        @media only screen and (max-width: 400.48px) {
+            .ticket tr {
+                display: flex;
+                flex-direction: column-reverse
+            }
+
+            .ticket-qr {
+                text-align: start;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+        <tbody>
+            <tr>
+                <td class="container">
+                    <div class="content">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <img src="https://run.fahrianggara.my.id/storage/photos/icon/logo.png" class="logo">
+                        </div>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
+                            <tr>
+                                <td class="wrapper">
+                                    <h2>Horee.. anda berhasil dapat tiket!</h2>
+                                    <p>
+                                        Hai, <b>Angga</b>! <br>
+                                        Terima kasih sudah memesan tiket LABSCO SPORT 2024.
+                                    </p>
+                                    <p>
+                                        Berikut adalah tiket yang telah anda pesan:
+                                    </p>
+
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                        class="ticket-list">
+                                        <tr>
+                                            <td class="ticket-item">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                                    class="ticket">
+                                                    <tr>
+                                                        <td class="ticket-content">
+                                                            <h3 style="margin-bottom: 10px;">
+                                                                [1/4] Angga#0001
+                                                            </h3>
+                                                            <p class="ticket-info">
+                                                                <img
+                                                                    src="https://run.fahrianggara.my.id/storage/photos/icon/point.png">
+                                                                <span>Labsco Sport 2024 - 5K Run</span>
+                                                            </p>
+                                                            <p class="ticket-info">
+                                                                <img
+                                                                    src="https://run.fahrianggara.my.id/storage/photos/icon/calendar.png">
+                                                                <span>22 Agustus - 30 Agustus 2024</span>
+                                                            </p>
+                                                            <p class="ticket-info" last>
+                                                                <img
+                                                                    src="https://run.fahrianggara.my.id/storage/photos/icon/marker.png">
+                                                                <span>Kantor Pusat Labsco</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="ticket-qr">
+                                                            <img
+                                                                src="https://run.fahrianggara.my.id/storage/photos/icon/qrcode.png">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <a href="#" class="button-primary">Cetak Tiket</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
+                            <tr>
+                                <td class="wrapper">
+                                    <h2 style="margin-bottom: 5px;">Rincian Pembayaran</h2>
+
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="bill">
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>Status Pemesanan</td>
+                                                        <td align="right" style="color: #039a00;">PAID</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nomor Pemesanan</td>
+                                                        <td align="right">66c3b86c98d9d</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Waktu Pembayaran</td>
+                                                        <td align="right">22 Ags 2024 12:00 PM</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Metode Pembayaran</td>
+                                                        <td align="right">Bank Transfer</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jumlah</td>
+                                                        <td align="right">4 Partisipasi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total Pembayaran</td>
+                                                        <td align="right">Rp 1.000.000</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <a href="#" class="button-primary">Cetak Bukti Pembayaran</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="footer">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="content-block powered-by">
+                                        © Labsco Sport 2024. All right reserved
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
