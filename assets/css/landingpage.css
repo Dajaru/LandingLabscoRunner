@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 :root {
     --bay-of-many-900: #27357D;
-    --bay-of-many-800: #2B3CA2;
+    --bay-of-many-800: rgb(43, 60, 162);
     --bay-of-many-600: #375AD9;
     --bay-of-many-500: #4C77E5;
+    --text-black: #474747;
     --text-white-color: #ffffff;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
-    font-family: 'inter', sans-serif;
+    font-family: 'inter', sans-serif !important;
     padding: 0;
     margin: 0;
 }
@@ -19,8 +20,6 @@ body {
 header .navbar {
     padding: 30px 0px;
 }
-
-.header
 
 /* Tambahkan warna background atau properti lainnya untuk navbar saat di-scroll */
 .navbar-scrolled {
@@ -71,14 +70,22 @@ header .navbar .nav-item .nav-link {
 }
 
 .landing .event h1 {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: bold;
     color: white;
     text-transform: capitalize;
+    padding: 10px 0;
+}
+
+.landing .event .description {
+    font-weight: 400;
+    color: #FFF8EB;
+    font-size: 17px;
+    padding-bottom: 10px;
 }
 
 .landing .event .btn-one {
-    padding: 15px 15px !important;
+    padding: 13px !important;
     background-color: var(--bay-of-many-900);
     color: var(--text-white-color);
     font-weight: bold;
@@ -87,7 +94,7 @@ header .navbar .nav-item .nav-link {
 }
 
 .landing .event .btn-two {
-    padding: 15px 15px !important;
+    padding: 13px !important;
     color: var(--text-white-color);
     font-weight: bold;
     font-size: 15px !important;
@@ -95,21 +102,22 @@ header .navbar .nav-item .nav-link {
     text-decoration: underline;
 }
 
-.landing .countdown {
+.countdown {
     margin-bottom: 16px;
+    width: 80%;
 }
 
-.landing .countdown .row .col {
+.countdown .row .col {
     text-align: center;
     margin-bottom: 10px;
 }
 
-.landing .countdown .row .col span {
+.countdown .row .col span {
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-.landing .countdown .row .col span:nth-last-child(1) {
+.countdown .row .col span:nth-last-child(1) {
     font-size: 20px !important;
     font-weight: 400;
 }
@@ -202,9 +210,15 @@ header .navbar .nav-item .nav-link {
     color: var(--bay-of-many-800);
     margin-bottom: 5px;
     font-size: 40px;
-    color: #474747;
+    color: var(--text-black);
     font-weight: bold;
     text-transform: capitalize;
+}
+
+.content .title-run-schedules p {
+    text-align: center;
+    width: 80%;
+    margin: auto;
 }
 
 .content .run-category {
@@ -216,6 +230,7 @@ header .navbar .nav-item .nav-link {
     border-radius: 10px;
     padding: 30px 0px 30px 10px;
 }
+
 .content .run-category .card .row {
     margin: 0 !important;
 }
@@ -225,10 +240,15 @@ header .navbar .nav-item .nav-link {
     color: var(--text-white-color) !important;
 }
 
+.content .run-category .active h6 {
+    color: var(--text-white-color) !important;
+}
+
 .content .run-category .card .category h6 {
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: var(--text-black);
 }
 
 .content .run-category .card .category small {
@@ -247,6 +267,7 @@ header .navbar .nav-item .nav-link {
     color: red;
     top: 8px;
 }
+
 .content .run-category .card .price .original-price::before {
     content: '';
     width: 120%;
@@ -257,35 +278,361 @@ header .navbar .nav-item .nav-link {
     height: 2px;
     background-color: red;
 }
+
 .content .run-category .card .price .discount {
     font-size: 24px;
     font-weight: bold;
 }
 
 
-.content .schedules{
+.content .schedules {
     padding: 30px 0px;
 }
-.content .schedules .card{
+
+.content .schedules .schedules-card {
+    margin-top: 20px;
+    background-color: var(--bay-of-many-900);
     border-radius: 10px;
-    border-color: var(--bay-of-many-500);
-    padding: 70px 10px;
-    text-align: center;
-    background-size: cover;
-    margin-top: auto;
-    margin-bottom: auto;
-    color: var(--text-white-color);
-    font-weight: bold;
-}
-.content .schedules .card h5{
-    font-size: 24px;
-}
-.content .schedules .card small{
-    font-weight: normal !important;
-    font-size: 16px;
 }
 
-.content .prizes{
+.content .schedules .schedules-card .row {
+    margin: 0;
+}
+
+.content .schedules .schedules-card .col-lg-7 {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.content .schedules .schedules-card .col-lg-5 {
+    background-color: var(--text-white-color);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0 8px 8px 0;
+    padding: 50px;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+}
+
+.content .schedules .schedules-card .col-lg-7 h6 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+.content .routes {
+    background-image: url('../images/run-route/route5k.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 160px 0px;
+    /* height: 560px; */
+}
+
+
+.content .routes h3 {
+    color: var(--text-white-color);
+    font-size: 36px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.content .routes .route .card {
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.content .routes .route .active {
     background-color: var(--bay-of-many-900);
-    padding: 20px 0;
+    color: var(--text-white-color) !important;
+}
+
+.content .routes .route .card:nth-child(3) {
+    margin-top: 15px;
+}
+
+.content .routes .route .card-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.content .routes .route .card p {
+    font-size: 12px;
+    margin: 0;
+    width: 80%;
+    padding: 0px 10px;
+    text-align: right;
+}
+
+.content .routes .route .card h5 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.content .routes .route button {
+    background-color: var(--bay-of-many-800);
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    padding: 12px 0;
+    border-radius: 10px;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.content .time {
+    background-color: var(--bay-of-many-900);
+    width: 100%;
+    padding: 15px 0;
+}
+
+.content .time .countdown {
+    color: var(--text-white-color);
+    font-weight: bold;
+    margin: 0;
+}
+
+.content .time .countdown .row .col {
+    margin: 0;
+    padding: 0;
+}
+
+.content .time h4 {
+    text-align: right;
+    margin-top: auto;
+    color: var(--text-white-color);
+    font-weight: bold;
+    margin: 0;
+}
+
+.content .sponsered {
+    padding: 90px 0;
+}
+
+.content .sponsered .title-sponsored {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #434343;
+    margin-bottom: 30px;
+}
+
+.content .sponsered .main-sponsor {
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+.content .sponsered .main-sponsor .title-sponsored {
+    margin-bottom: 130px;
+}
+
+.content .sponsered .main-sponsor img {
+    width: 98px;
+    height: 98px;
+}
+.content .sponsered .main-sponsor .img {
+    position: relative;
+}
+.content .sponsered .main-sponsor .img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--bay-of-many-600);
+    width: 160px;
+    height: 160px;
+    border-radius: 0 0 10px 10px;
+}
+.content .sponsered .main-sponsor .img::after {
+    content: 'Title Sponsor';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bay-of-many-600);
+    width: 160px;
+    padding: 10px 0px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 10px 10px 0 0;
+}
+.content .sponsered .other-sponsor img{
+    padding: 30px 5px;
+}
+
+
+
+.content .offering{
+    padding: 100px 0px;
+}
+.content .offering img{
+    width: 89px;
+    height: 92px;
+}
+.content .offering h6{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-white-color);
+}
+.content .offering h2{
+    padding: 5px 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+.content .offering p{
+   font-size: 16px;
+   width: 80%;
+   margin: auto;
+   padding-bottom: 20px;
+}
+.content .offering .btn{
+    background-color: var(--bay-of-many-900);
+    padding: 10px 30px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.content .sec-offering{
+    background-color: var(--bay-of-many-900);
+    padding: 20px 0px;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+}
+
+.content .sec-offering .btn{
+    background-color: var(--bay-of-many-600);
+    padding: 10px 30px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer h3 {
+    font-weight: bold;
+    color: var(--text-black);
+    padding: 30px 0 10px 0;
+}
+
+footer .sosmed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .sosmed .sosmed-icon {
+    margin-top: 30px;
+}
+
+footer .sosmed .sosmed-icon img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 0 3px 0 3px;
+}
+
+footer .sosmed .sosmed-icon img::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bay-of-many-900);
+    z-index: -1;
+    /* Pastikan background berada di belakang gambar */
+    border-radius: 50%;
+    /* Jika ingin background berbentuk lingkaran */
+}
+
+
+
+
+
+footer .footer-info {
+    margin-top: 30px;
+}
+
+footer .footer-info .title {
+    font-weight: bold;
+    color: var(--text-black);
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+footer .footer-info .second h6 {
+    margin-top: 10px;
+    color: #808080;
+}
+
+footer .footer-info .phone-number h2 {
+    color: var(--bay-of-many-900);
+    font-weight: bolder;
+    padding: 8px 0;
+}
+
+footer .footer-info .email span {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--text-black);
+}
+
+footer .footer-info .second ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-info .second ul li {
+    padding: 2px 0;
+}
+
+footer .footer-info .second ul li a {
+    text-decoration: none;
+    color: #808080;
+}
+
+
+footer .copyright {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-white-color);
+    margin-top: 109px;
+}
+
+footer .copyright .row-copyright {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .copyright .text-copy {
+    margin: 0;
 }
