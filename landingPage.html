@@ -15,7 +15,7 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -26,19 +26,49 @@
                     <img src="assets/images/logo.svg" alt="">
                     <span class="ms-2">Labsco Sport</span>
                 </a>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="desktop-nav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="#home">Race</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#event">Event</a>
+                            <a class="nav-link" href="#event">Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
+                            <a class="nav-link" href="#">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Result</a>
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Registration</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-nav" id="mobile-nav">
+                    <div class="d-flex">
+                        <div class="hamburger">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Race</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#event">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Registration</a>
                         </li>
                     </ul>
                 </div>
@@ -46,10 +76,11 @@
         </nav>
     </header>
 
+
     <section class="landing" id="home">
         <div class="container event" data-aos="fade-up" data-aos-duration="1000">
             <div class="col-lg-8 col-xl-8">
-                <small>New Event</small>
+                <small>Get Ready For</small>
                 <h1>Codehub Marathon</h1>
             </div>
             <div class="col-lg-5">
@@ -74,8 +105,8 @@
 
     <div class="event-info container-fluid" id="event">
         <div class="container">
-            <div class="row m-0">
-                <div class="col-lg-4 col-6 info-card">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 col-12 info-card">
                     <div class="col-3" data-aos="fade-up">
                         <center><img class="img-fluid" src="assets/images/event-info-icon/location.svg" alt=""></center>
                     </div>
@@ -83,7 +114,7 @@
                         <span>Indonesia Convention Exhibition (ICE) BSD City</span>
                     </div>
                 </div>
-                <div class="col-lg-4 col-6 info-card">
+                <div class="col-lg-4 col-sm-12 col-12 info-card">
                     <div class="col-3" data-aos="fade-up">
                         <center><img class="img-fluid" src="assets/images/event-info-icon/date.svg" alt=""></center>
                     </div>
@@ -91,7 +122,7 @@
                         <span>Sunday, 4 August 2024 05.00 WIB</span>
                     </div>
                 </div>
-                <div class="col-lg-4 col-6 info-card">
+                <div class="col-lg-4 col-sm-12 col-12 info-card">
                     <div class="col-3" data-aos="fade-up">
                         <center><img class="img-fluid" src="assets/images/event-info-icon/shoes.svg" alt=""></center>
                     </div>
@@ -108,12 +139,12 @@
 
 
     <section class="content"
-        style="background: url('assets/images/background/bg.png') no-repeat; background-position: center; background-position-y: 10%;">
+        style="background: url('assets/images/background/bg.png'); background-position: center; background-position-y: 5%; background-size: contain;">
         <div class="container">
 
             <div class="run-category">
 
-                <div class="col-8 mx-auto title-run-schedules" data-aos="fade-up">
+                <div class="col-lg-8 mx-auto title-run-schedules" data-aos="fade-up">
                     <h5>Race Category</h5>
                     <h3>Codehub Marathon</h3>
                     <p>Each category is designed to provide the best running experience, for both individual,
@@ -121,7 +152,7 @@
                 </div>
 
                 <div class="col-lg-8 mx-auto">
-                    <div class="card-row row">
+                    <div class="card-row row m-0">
 
                         <div class="col-lg-6 col-12 p-1">
                             <div class="card active" data-aos="fade-up" data-aos-duration="800">
@@ -190,7 +221,7 @@
 
             <div class="schedules">
 
-                <div class="col-8 mx-auto title-run-schedules" data-aos="fade-up">
+                <div class="col-lg-8 mx-auto title-run-schedules" data-aos="fade-up">
                     <h5>Schedules</h5>
                     <h3>Don't miss registration</h3>
                 </div>
@@ -198,21 +229,21 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="col-12 schedules-card" data-aos="fade-up" data-aos-duration="600">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6 col-5 title-schedules">
                                 <h6 class="my-auto">Registration</h6>
                             </div>
-                            <div class="col-lg-5">
-                                <span>25 SEPTEMBER 2023 - 25 SEPTEMBER 2024</span><br>
+                            <div class="col-lg-6 col-7 sec-schedules">
+                                <span>25 SEPTEMBER 2023 <br> 25 SEPTEMBER 2024</span><br>
                                 <small>00.00 WIB - 23.59 WIB</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 schedules-card" data-aos="fade-up" data-aos-duration="800">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6 col-5 title-schedules">
                                 <h6>Racepack Collection</h6>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-6 col-7 sec-schedules">
                                 <span>25 SEPTEMBER 2024</span><br>
                                 <small>00.00 WIB - 23.59 WIB</small>
                             </div>
@@ -220,10 +251,10 @@
                     </div>
                     <div class="col-12 schedules-card" data-aos="fade-up" data-aos-duration="1000">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6 col-5 title-schedules">
                                 <h6>Race Day</h6>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-6 col-7 sec-schedules">
                                 <span>25 DECEMBER 2024</span><br>
                                 <small>00.00 WIB - 23.59 WIB</small>
                             </div>
@@ -265,12 +296,12 @@
         <div class="time">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-6 mx-auto">
                         <div class="countdown" id="countdown">
                             <!-- Countdown akan muncul di sini -->
                         </div>
                     </div>
-                    <div class="col-lg-6 ms-auto my-auto">
+                    <div class="col-lg-6 my-auto">
                         <h4>Race Starts on September 7, 2024</h4>
                     </div>
                 </div>
@@ -280,13 +311,14 @@
         <div class="sponsered">
             <div class="container">
                 <div class="col-lg-9 mx-auto">
-                    <div class="row m-0">
+                    <div class="row m-0 main-events">
                         <div class="col-lg-4">
                             <div class="title-sponsored">
                                 Presented by
                             </div>
                             <center>
-                                <img src="assets/images/sponsor/1.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/1.png" alt="" class="img-fluid" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
                         <div class="col-lg-4">
@@ -294,7 +326,8 @@
                                 Managed by
                             </div>
                             <center>
-                                <img src="assets/images/sponsor/2.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/2.png" alt="" class="img-fluid" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
                         <div class="col-lg-4">
@@ -302,18 +335,19 @@
                                 Official Timing Race
                             </div>
                             <center>
-                                <img src="assets/images/sponsor/5.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/5.png" alt="" class="img-fluid" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
                     </div>
                     <div class="row main-sponsor">
-                        <div class="col-lg-6 mx-auto">
+                        <div class="col-lg-6 mx-auto" data-aos="fade-up">
                             <div class="title-sponsored">
                                 OUR AWESOME Sponsors
                             </div>
                             <div class="img">
                                 <center>
-                                    <img src="assets/images/sponsor/3.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                    <img src="assets/images/sponsor/3.png" alt="" data-aos="fade-up">
                                 </center>
                             </div>
                         </div>
@@ -321,64 +355,76 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="row other-sponsor">
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/4.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/4.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/6.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/6.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/7.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/7.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/8.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/8.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/9.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/9.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/10.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/10.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/11.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/11.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/12.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/12.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/13.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/13.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/14.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/14.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/15.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/15.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
-                        <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4 col-6 mx-auto my-auto">
                             <center>
-                                <img src="assets/images/sponsor/16.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                                <img src="assets/images/sponsor/16.png" class="img-fluid" alt="" data-aos="fade-up"
+                                    data-aos-duration="1000">
                             </center>
                         </div>
                     </div>
@@ -386,7 +432,8 @@
             </div>
         </div>
 
-        <div class="offering" style="background: url(assets/images/background/top-footer.png) no-repeat center; background-size: cover;">
+        <div class="offering"
+            style="background: url(assets/images/background/top-footer.png) no-repeat center; background-size: cover;">
             <div class="container">
                 <div class="col-lg-10 mx-auto text-center text-white" data-aos="fade-up">
                     <center>
@@ -394,8 +441,12 @@
                     </center>
                     <h6>GET READY FOR EVENT</h6>
                     <h2>SECURE YOUR SPOT TODAY</h2>
-                    <p>Don't miss your chance to be a part of this extraordinary journey. Secure your spot today and take the first step towards a memorable adventure. Embrace the challenge and make history at the 2024 Github Marathon.</p>
-                    <center><div class="btn">REGISTER</div></center>
+                    <p>Don't miss your chance to be a part of this extraordinary journey. Secure your spot today and
+                        take the first step towards a memorable adventure. Embrace the challenge and make history at the
+                        2024 Github Marathon.</p>
+                    <center>
+                        <div class="btn">REGISTER</div>
+                    </center>
                 </div>
             </div>
         </div>
@@ -405,8 +456,8 @@
                 <div class="btn" data-aos="fade-up">FAQ</div>
             </div>
         </div>
-        
-        
+
+
 
     </section>
 
@@ -490,8 +541,8 @@
         <div class="copyright bg-dark">
             <div class="container">
                 <div class="row-copyright">
-                    <span class="text-copy">© codehub marathon 2024. All right reserved</span>
-                    <span class="register-event">Registration Event by Labsco Sport</span>
+                    <h6 class="text-copy">© codehub marathon 2024. All right reserved</h6>
+                    <h6 class="register-event">Registration Event by Labsco Sport</h6>
                 </div>
             </div>
         </div>
@@ -501,6 +552,43 @@
     <script src="assets/js/countdonws.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Scroll ke bawah, sembunyikan navbar
+            if (scrollTop > lastScrollTop && scrollTop > 600) {
+                navbar.classList.add('hidden');
+            } else {
+                // Scroll ke atas, tampilkan navbar
+                navbar.classList.remove('hidden');
+            }
+
+            // Jika scroll lebih dari 100px, ubah background menjadi putih
+            if (scrollTop > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                // Jika di posisi paling atas, kembalikan ke background transparan
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+    </script>
+    <script>
+        const hamburgers = document.getElementsByClassName('hamburger');
+        const menu = document.getElementById('mobile-nav');
+
+        Array.from(hamburgers).forEach(hamburger => {
+            hamburger.addEventListener('click', () => {
+                menu.classList.toggle('actived');
+            });
+        });
     </script>
 </body>
 
