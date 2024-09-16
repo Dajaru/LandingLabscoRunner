@@ -79,7 +79,7 @@ header .navbar .mobile-nav {
     right: 0;
     background-color: #ffffff;
     width: 60%;
-    height: 100vh;
+    min-height: 120vh;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
@@ -243,6 +243,11 @@ header .navbar .mobile-nav.actived .hamburger,
         font-size: 52px;
     }
 
+    .landing .event .btn-one,
+    .btn-two {
+        display: none !important;
+    }
+
     .countdown {
         margin-bottom: 16px;
         width: 90%;
@@ -256,10 +261,6 @@ header .navbar .mobile-nav.actived .hamburger,
     }
 
 }
-
-
-
-
 
 
 
@@ -305,7 +306,6 @@ header .navbar .mobile-nav.actived .hamburger,
 .event-info .info-card:nth-child(3) {
     background-color: var(--text-white-color);
     color: #343434;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .event-info .info-card:nth-child(3)::before {
@@ -319,20 +319,20 @@ header .navbar .mobile-nav.actived .hamburger,
     z-index: -1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
 }
-@media (min-width: 576px) {
-    .event-info .container, .event-info .container-sm {
-        max-width: 100% !important;
-    }
-}
-@media (min-width: 768px)  {
-    .event-info .container, .event-info .container-md, .event-info .container-sm {
-        max-width: 100% !important;
-    }
-}
+
 @media (max-width: 991px) {
+    .event-info .info-card:nth-child(3) {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+    }
+    .event-info .container,
+    .event-info .container-sm {
+        max-width: 100% !important;
+    }
+
     .event-info .info-card:nth-child(1)::before {
         display: none;
     }
+
     .event-info .info-card:nth-child(3)::before {
         display: none;
     }
@@ -344,6 +344,12 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 
+.content {
+    background: url('../images/background/bg.png');
+    background-position: center;
+    background-position-y: 5%;
+    background-size: cover;
+}
 
 .content .title-run-schedules {
     text-align: center;
@@ -377,14 +383,21 @@ header .navbar .mobile-nav.actived .hamburger,
     .content .title-run-schedules h3 {
         font-size: 30px;
     }
+
     .content .title-run-schedules h5 {
         font-size: 18px;
     }
+
     .content .title-run-schedules {
         padding: 30px 0 20px;
     }
 }
+
 @media (max-width: 768px) {
+    .content {
+        background-size: 500%;
+    }
+
     .content .title-run-schedules p {
         text-align: center;
         width: 100%;
@@ -460,6 +473,7 @@ header .navbar .mobile-nav.actived .hamburger,
     font-size: 24px;
     font-weight: bold;
 }
+
 @media (max-width: 575.98px) {
     .content .run-category .card .category h6 {
         font-size: 16px;
@@ -467,17 +481,21 @@ header .navbar .mobile-nav.actived .hamburger,
         margin-bottom: 5px;
         color: var(--text-black);
     }
+
     .content .run-category .card .category small {
         font-size: 14px;
     }
+
     .content .run-category .card .price .discount {
         font-size: 20px;
         font-weight: bold;
     }
+
     .content .run-category {
         padding: 30px 0px 0px;
     }
 }
+
 @media (max-width: 768px) {
     /* .content .title-run-schedules p {
         text-align: center;
@@ -516,17 +534,6 @@ header .navbar .mobile-nav.actived .hamburger,
     padding: 50px 20px;
 }
 
-.content .schedules .schedules-card .sec-schedules {
-    background-color: var(--text-white-color);
-    text-align: right;
-    font-size: 14px;
-    border: 1px solid var(--bay-of-many-500);
-    font-weight: bold;
-    padding: 50px 20px;
-    border-radius: 0 8px 8px 0;
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
 .content .schedules .schedules-card .title-schedules h6 {
     margin: 0;
     padding: 0;
@@ -534,21 +541,62 @@ header .navbar .mobile-nav.actived .hamburger,
     font-size: 20px;
     font-weight: bold;
 }
+
+.content .schedules .schedules-card .sec-schedules {
+    background-color: var(--text-white-color);
+    color: var(--text-black);
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid var(--bay-of-many-500);
+    font-weight: bold;
+    border-radius: 0 8px 8px 0;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.content .schedules .schedules-card .sec-schedules .end-time {
+    color: red;
+}
+
+
 @media (max-width: 575.98px) {
     .content .schedules {
         padding: 0;
     }
-    .content .schedules .schedules-card .title-schedules h6 {
-        font-size: 14px;
-        text-transform: uppercase;
-    }
+
     .content .schedules .schedules-card .title-schedules {
         padding: 40px 10px;
     }
-    .content .schedules .schedules-card .sec-schedules {
-        padding: 40px 5px;
-        font-size: 12px;
+
+    .content .schedules .schedules-card .title-schedules h6 {
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 0 12px;
     }
+
+    .content .schedules .schedules-card .sec-schedules {
+        padding: 30px 0px;
+        font-size: 14px;
+        justify-content: center;
+        border-radius: 0 0 10px 10px !important;
+        clip-path: none;
+        border: 1px solid var(--bay-of-many-500);
+    }
+}
+
+@media (max-width: 768px) {
+    .content .schedules .schedules-card .sec-schedules .text {
+        width: 80% !important;
+    }
+
+}
+@media (max-width: 1199px) {
+    .content .schedules .schedules-card .sec-schedules .text {
+        width: 80% !important;
+    }
+
 }
 
 
@@ -560,7 +608,7 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 .content .routes {
-    background-image: url('../images/run-route/route5k.svg');
+    background-image: url('../images/run-route/route.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -642,26 +690,30 @@ header .navbar .mobile-nav.actived .hamburger,
 }
 
 .content .time h4 {
-    text-align: right;
+    text-align: left;
     margin-top: auto;
     color: var(--text-white-color);
     font-weight: bold;
     margin: 0;
 }
+
 @media (max-width: 575.98px) {
     .content .time .countdown {
         width: 100%;
         margin: auto;
     }
+
     .content .time h4 {
         font-size: 16px;
     }
 }
+
 @media (max-width: 992px) {
     .content .time .countdown {
         width: 70%;
         margin: auto;
     }
+
     .content .time h4 {
         text-align: center;
         padding: 20px 0;
@@ -670,9 +722,9 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 
-.content .sponsered {
-    padding: 10px 0 90px;
-}
+    .content .sponsered {
+        padding: 70px 0 90px;
+    }
 
 .content .sponsered .title-sponsored {
     text-align: center;
@@ -680,12 +732,8 @@ header .navbar .mobile-nav.actived .hamburger,
     text-transform: uppercase;
     font-weight: bolder;
     color: #434343;
-    margin-top: 40px;
+    padding: 40px 0;
 
-}
-
-.content .sponsered .main-events img {
-    padding: 40px 0 0 0;
 }
 
 .content .sponsered .main-sponsor {
@@ -738,11 +786,31 @@ header .navbar .mobile-nav.actived .hamburger,
     padding: 70px 5px;
 }
 
+@media (max-width: 575.98px) {
+    /* .content .sponsered .main-sponsor .title-sponsored {
+        margin-bottom: 70px;
+    } */
+}
+
+@media (max-width: 991px) {
+
+    .content .sponsered .main-events .col-lg-4:nth-child(3) {
+        margin-top: 50px;
+    }
+    .content .sponsered .main-sponsor .title-sponsored{
+        margin-bottom: 100px;
+    }
+
+}
+
 
 
 
 .content .offering {
     padding: 100px 0px;
+    background: url(../images/background/top-footer.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .content .offering img {
@@ -792,7 +860,18 @@ header .navbar .mobile-nav.actived .hamburger,
     font-weight: bold;
     color: white;
 }
-
+@media (max-width: 575.98px) {
+    .content .offering h2{
+        font-size: 28px;
+    }
+    .content .offering .btn {
+        background-color: var(--bay-of-many-900);
+        padding: 10px 60px;
+        font-weight: bold;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
 
 
 
@@ -850,6 +929,14 @@ footer .footer-info {
     margin-top: 30px;
 }
 
+footer .footer-info .first-contact {
+    display: block;
+}
+
+footer .footer-info .second-contact {
+    display: none;
+}
+
 footer .footer-info .title {
     font-weight: bold;
     color: var(--text-black);
@@ -888,6 +975,7 @@ footer .footer-info .second ul li a {
     text-decoration: none;
     color: #808080;
 }
+
 footer .copyright {
     padding: 20px;
     font-size: 16px;
@@ -900,6 +988,7 @@ footer .copyright .row-copyright {
     display: flex;
     justify-content: space-between;
 }
+
 footer .copyright .row-copyright h6 {
     margin: 0;
 }
@@ -909,16 +998,23 @@ footer .copyright .text-copy {
 }
 
 @media (max-width: 521px) {
+
     footer h3 {
         width: 70%;
     }
+
+    footer .sosmed {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     footer .sosmed .sosmed-icon img {
         width: 35px;
         height: 35px;
         position: relative;
-        margin: 0 1px 0 1px;
     }
-    
+
     footer .sosmed .sosmed-icon img::after {
         content: '';
         width: 35px;
@@ -934,31 +1030,56 @@ footer .copyright .text-copy {
         /* Jika ingin background berbentuk lingkaran */
     }
 }
+
 @media (max-width: 575.98px) {
     .content .time .countdown {
         width: 100%;
         margin: auto;
     }
+
     .content .time h4 {
         font-size: 16px;
     }
+
     footer .copyright .row-copyright h6 {
         font-size: 12px;
     }
+
     footer .copyright .row-copyright h6:nth-child(2) {
         margin-top: 5px;
     }
-    
+
 }
+
 @media (max-width: 768px) {
     footer .sosmed .sosmed-icon {
-        width: 40%;
+        display: flex;
+        direction: column;
+        justify-content: right;
     }
 }
-@media (max-width: 992px) {
-    footer .footer-info .col-lg-7{
-        padding: 30px 0;
+
+@media (max-width: 991px) {
+    footer .footer-info {
+        text-align: center;
     }
+
+    footer .footer-info .col-lg-7 {
+        padding: 15px 0;
+    }
+
+    footer .footer-info .col-12 {
+        padding: 30px 0 45px;
+    }
+
+    footer .footer-info .first-contact {
+        display: none !important;
+    }
+
+    footer .footer-info .second-contact {
+        display: block !important;
+    }
+
     footer .copyright {
         padding: 20px;
         font-size: 16px;
@@ -966,6 +1087,7 @@ footer .copyright .text-copy {
         color: var(--text-white-color);
         margin-top: 10px;
     }
+
     footer .copyright .row-copyright {
         display: block;
         text-align: center;
