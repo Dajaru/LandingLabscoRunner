@@ -1,0 +1,320 @@
+:root {
+    --bay-of-many-900: #27357D;
+    --bay-of-many-800: rgb(43, 60, 162);
+    --bay-of-many-600: #375AD9;
+    --bay-of-many-500: #4C77E5;
+    --text-black: #474747;
+    --text-white-color: #ffffff;
+}
+
+.landingRaceProperty {
+    background: url('../images/landing.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landingRaceProperty small {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.landingRaceProperty .clip-path {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    bottom: -1px;
+    right: 0;
+    clip-path: polygon(50px 0px, 100% 0px, 100% 100%, 0px 100%);
+    width: 52%;
+    height: 74px;
+}
+
+.landingRaceProperty .event {
+    color: white;
+    padding: 150px 0;
+}
+
+.landingRaceProperty .event h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--text-white-color);
+    text-transform: capitalize;
+}
+
+.countdown {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.countdown .row .col {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.countdown .row .col span {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.countdown .row .col span:nth-last-child(1) {
+    font-size: 20px !important;
+    font-weight: 400;
+}
+
+@media (max-width: 575.98px) {
+
+    .landingRaceProperty {
+        text-align: center !important;
+        min-height: 100vh;
+    }
+
+    .landingRaceProperty .event {
+        color: white;
+    }
+
+    .landingRaceProperty .event h1 {
+        font-size: 52px;
+    }
+
+    .landingRaceProperty .clip-path {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        bottom: -2px;
+        right: -2px;
+        clip-path: polygon(50px 0px, 100% 0px, 100% 100%, 0px 100%);
+        width: 52%;
+        height: 74px;
+    }
+
+    .countdown {
+        margin-bottom: 16px;
+        width: 90%;
+        margin: auto !important;
+        padding: 10px 0;
+    }
+
+    .countdown .row .col span {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+}
+
+
+.warning {
+    background-color: #FDE047;
+    padding: 10px 5px;
+    margin: 44px 0;
+    font-size: 16px;
+    color: var(--text-black);
+}
+
+.schedules {
+    background: url('../images/background/bg.png') no-repeat center;
+    padding-bottom: 88px;
+    z-index: -2;
+}
+.schedules .timeline{
+    position: relative;
+}
+.schedules .timeline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    height: 100%;
+    width: 4px;
+    background-color: rgba(129, 129, 129, 0.214);
+    z-index: -1;
+}
+
+.schedules .timeline .schedule-time {
+    margin: 20px 0;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0 0 10px;
+    font-size: 14px;
+}
+
+.schedules .timeline-item .time {
+    background-color: #F1F1F1;
+    text-align: right;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+}
+
+.schedules .timeline-item .title-time {
+    background-color: #202D6F;
+    text-align: left;
+    font-weight: bold;
+    padding: 10px 10px;
+    color: var(--text-white-color);
+}
+
+.schedules .timeline-item .time-desk {
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    color: var(--text-black);
+}
+
+.schedules .timeline-item .location-time {
+    font-weight: 600;
+    color: var(--text-black);
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.schedules .timeline-item .time-start {
+    padding: 0 15px;
+    font-weight: bold;
+    color: var(--text-black);
+}
+
+.schedules .timeline-item .time-start h6 {
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.schedules .timeline-item .time-start .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--bay-of-many-900);
+    margin: 0 10px;
+}
+
+.schedules .timeline-item .time-start span:nth-child(2) {
+    margin-left: 2px;
+}
+
+.schedules .timeline-item .time-start span:nth-last-child(1) {
+    font-weight: normal;
+    text-align: left;
+}
+
+@media (max-width: 420px) {
+    .schedules .timeline-item .time-start {
+        font-size: 14px;
+    }
+
+    .schedules .timeline-item .time-start h6 {
+        font-size: 14px;
+        min-width: 40px;
+    }
+
+    .schedules .timeline-item .time-start span:nth-child(2) {
+        margin-left: 2px;
+    }
+}
+@media (max-width: 575.98px) {
+    .warning {
+        background-color: #FDE047;
+        padding: 10px 5px;
+        margin: 44px 0;
+        font-size: 12px;
+        color: var(--text-black);
+    }
+    
+    .warning span{
+        text-align: center;
+    }
+    .schedules .timeline::after {
+        left: 25%;
+    }
+}
+@media (max-width: 991px) {
+    .warning img{
+        padding: 20px 0 !important;
+    }
+}
+
+
+
+.FAQ .accordion-title {
+    padding-bottom: 40px;
+}
+.FAQ .accordion-title .title-text-accordion {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-black);
+    text-transform: uppercase;
+}
+.FAQ .accordion-title .text-title {
+    padding-bottom: 30px;
+}
+.FAQ .accordion-title .text-title span {
+    padding: 0 !important;
+    font-weight: bold;
+}
+.FAQ .accordion-title h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-black);
+    text-transform: uppercase;
+}
+.FAQ .accordion-title .rules-regulation {
+    font-size: 16px !important;
+}
+.FAQ .accordion-title .rules-regulation .w-80 {
+    width: 80%;
+}
+
+.FAQ .accordion-button.collapsed {
+    background-color: #f1f1f1;
+    color: var(--text-black);
+    font-weight: bold;
+}
+
+.FAQ .accordion-body {
+    color: var(--text-black);
+}
+
+.FAQ .expand-all-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.FAQ .accordion-button:not(.collapsed) {
+    background-color: var(--bay-of-many-900) !important;
+    color: white !important;
+    padding: 30px 20px !important;
+    transition: padding ease 0.5s;
+    font-weight: bold !important;
+    position: relative;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+}
+.FAQ .accordion-item{
+    border-left: 1px solid var(--bay-of-many-900);
+}
+@media (max-width: 575.98px) {
+    .FAQ .warning span {
+        font-size: 10px;
+    }
+    .FAQ .accordion-title .text-title h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--text-black);
+        text-transform: uppercase;
+    }
+    .FAQ .accordion-title .rules-regulation {
+        font-size: 12px !important;
+    }
+    .FAQ .accordion-title .text-title span {
+        font-size: 10px;
+    }
+    
+}

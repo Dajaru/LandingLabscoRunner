@@ -24,7 +24,7 @@ function startCountdown() {
         // Tampilkan hasil di semua elemen dengan class "countdown"
         document.querySelectorAll(".countdown").forEach(function(countdownElement) {
             countdownElement.innerHTML = `
-                <div class="row">
+                <div class="row m-0">
                     <div class="col">
                         <span>${weeks}</span><br><span>weeks</span>
                     </div>

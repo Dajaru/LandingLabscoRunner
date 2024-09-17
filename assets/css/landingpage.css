@@ -79,7 +79,7 @@ header .navbar .mobile-nav {
     right: 0;
     background-color: #ffffff;
     width: 60%;
-    min-height: 120vh;
+    min-height: 100vh;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
