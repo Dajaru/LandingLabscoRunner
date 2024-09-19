@@ -318,3 +318,28 @@
     }
     
 }
+
+
+
+
+
+.the-race .main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-black);
+    text-transform: uppercase;
+    padding: 40px 0;
+}
+.race-text {
+    padding: 10px 0;
+}
+.the-race .race-text h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--bay-of-many-900);
+    text-transform: uppercase;
+}
+.the-race .race-text p {
+    font-size: 16px;
+    color: var(--text-black);
+}
