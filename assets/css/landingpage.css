@@ -256,7 +256,7 @@ header .navbar .mobile-nav.actived .hamburger,
     }
 
     .countdown .row .col span {
-        font-size: 24px;
+        font-size: 19px;
         font-weight: 700;
     }
 
@@ -794,7 +794,7 @@ header .navbar .mobile-nav.actived .hamburger,
 
 @media (max-width: 991px) {
 
-    .content .sponsered .main-events .col-lg-4:nth-child(3) {
+    .content .sponsered .main-events .col-lg-4 {
         margin-top: 50px;
     }
     .content .sponsered .main-sponsor .title-sponsored{
