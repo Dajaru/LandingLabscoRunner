@@ -150,7 +150,8 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 .landing {
-    background: url('../images/landing.png') no-repeat center;
+    background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('../images/landing.png') no-repeat center;
+    /* background: url('../images/landing.png') no-repeat center; */
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
@@ -324,6 +325,7 @@ header .navbar .mobile-nav.actived .hamburger,
     .event-info .info-card:nth-child(3) {
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
+
     .event-info .container,
     .event-info .container-sm {
         max-width: 100% !important;
@@ -592,6 +594,7 @@ header .navbar .mobile-nav.actived .hamburger,
     }
 
 }
+
 @media (max-width: 1199px) {
     .content .schedules .schedules-card .sec-schedules .text {
         width: 80% !important;
@@ -608,12 +611,23 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 .content .routes {
-    background-image: url('../images/run-route/route.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     padding: 160px 0px;
-    /* height: 560px; */
+    position: relative;
+
+}
+
+.content .routes::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0.1));
+
 }
 
 
@@ -623,7 +637,9 @@ header .navbar .mobile-nav.actived .hamburger,
     font-weight: bold;
     text-align: right;
 }
-
+.content .routes .route {
+    z-index: 2;
+}
 .content .routes .route .card {
     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
     border-radius: 10px;
@@ -722,9 +738,9 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 
-    .content .sponsered {
-        padding: 70px 0 90px;
-    }
+.content .sponsered {
+    padding: 70px 0 90px;
+}
 
 .content .sponsered .title-sponsored {
     text-align: center;
@@ -797,7 +813,8 @@ header .navbar .mobile-nav.actived .hamburger,
     .content .sponsered .main-events .col-lg-4 {
         margin-top: 50px;
     }
-    .content .sponsered .main-sponsor .title-sponsored{
+
+    .content .sponsered .main-sponsor .title-sponsored {
         margin-bottom: 100px;
     }
 
@@ -805,10 +822,9 @@ header .navbar .mobile-nav.actived .hamburger,
 
 
 
-
 .content .offering {
     padding: 100px 0px;
-    background: url(../images/background/top-footer.png) no-repeat center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../images/background/top-footer.png) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -860,10 +876,12 @@ header .navbar .mobile-nav.actived .hamburger,
     font-weight: bold;
     color: white;
 }
+
 @media (max-width: 575.98px) {
-    .content .offering h2{
+    .content .offering h2 {
         font-size: 28px;
     }
+
     .content .offering .btn {
         background-color: var(--bay-of-many-900);
         padding: 10px 60px;
