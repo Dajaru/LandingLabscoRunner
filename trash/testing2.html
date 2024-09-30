@@ -26,14 +26,27 @@
             overflow: hidden;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+        }
+
         .routes {
             overflow-x: hidden;
+            position: relative;
         }
 
         .map-routes {
             position: relative;
             min-height: 84vh;
             cursor: default;
+            display: flex;
+            align-items: center;
         }
 
         .map-routes:after {
@@ -88,7 +101,6 @@
             display: flex;
             align-items: center;
             justify-items: center;
-            /* flex-direction: row-reverse; */
             padding: 20px 15px;
         }
 
@@ -159,13 +171,82 @@
         }
 
         .routes .mobile-route {
-            position: absolute;
-            bottom: 0;
+            position: sticky;
+            top: 500px;
             left: 0;
             width: 100%;
             z-index: 5;
             color: white;
             padding: 10px 0;
+        }
+
+        .routes .mobile-route h3 {
+            font-weight: bold;
+        }
+
+        .routes .mobile-nav-route .active {
+            background-color: #27357d;
+            color: white;
+        }
+
+        .routes .mobile-nav-route .card {
+            border-radius: 0;
+        }
+
+        .routes .mobile-nav-route .card h4 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .routes .routes-overlay {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .routes .routes-overlay.fade-out {
+            opacity: 0;
+        }
+
+        .routes-overlay.fade-in {
+            opacity: 1;
+        }
+
+        .routes .distance-value,
+        .routes .estimate-value,
+        .routes .start-time,
+        .routes .desk-run {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateY(10px);
+            padding: 0 0 10px 0;
+        }
+
+        .routes .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .routes .active {
+            opacity: 1;
+        }
+
+        .routes .card {
+            transition: all 0.4s ease;
+        }
+
+        .routes .card.active {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .time-remaining {
@@ -196,37 +277,13 @@
             .map-routes .mobile-route h3 {
                 font-weight: bold;
                 margin: 0;
-                font-size: 24px;
+                font-size: 30px;
             }
 
             .map-routes .mobile-route p {
                 font-size: 14px;
                 margin: 0;
-            }
-
-            .map-routes .mobile-route .information-route {
-                color: #ffffff;
-            }
-
-            .map-routes .mobile-route .information-route .the-information {
-                width: 84px;
-            }
-
-            .map-routes .mobile-route .information-route .title {
-                font-size: 10px;
-                font-weight: bold;
-            }
-
-            .map-routes .mobile-route .information-route .value {
-                font-size: 16px;
-                font-weight: bold;
-            }
-
-            .map-routes .mobile-nav-route h3 {
-                font-weight: bold;
-                margin: 0;
-                font-size: 24px;
-
+                padding-bottom: 10px;
             }
 
         }
@@ -240,6 +297,7 @@
                 overflow-x: scroll;
                 overflow-y: hidden;
                 min-height: 600px;
+                display: block;
             }
 
             .map-routes:active {
@@ -263,14 +321,54 @@
             .map-routes:after {
                 bottom: 0;
                 left: 0;
-                width: 1000px;
+                width: 1300px;
                 height: 100%;
-                background: linear-gradient(to bottom left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+                background: linear-gradient(to bottom left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
             }
 
             .desktop-route,
             .map-routes .desktop-route .information-route {
                 display: none !important;
+            }
+
+            .map-routes .mobile-route .information-route {
+                color: #ffffff;
+            }
+
+            .map-routes .mobile-route .information-route .the-information {
+                width: 84px;
+            }
+
+            .map-routes .mobile-route .information-route .title {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .map-routes .mobile-route .information-route .value {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .map-routes .mobile-nav-route h3 {
+                font-weight: bold;
+                margin: 0;
+                font-size: 24px;
+
+            }
+
+            .map-routes .information-route {
+                padding: 10px 0 0 0;
+            }
+            .routes .mobile-route {
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .routes .mobile-route.fade-in {
+                opacity: 1;
+            }
+
+            .routes .mobile-route.fade-out {
+                opacity: 0;
             }
 
         }
@@ -286,32 +384,34 @@
 
         @media (max-width: 1200px) {
             .routes .desktop-route .card-body h5 {
-
                 width: auto;
             }
         }
+
     </style>
 </head>
 
 <body>
     <div class="routes">
-        <div class="map-routes d-flex align-items-center">
-            <img src="assets/images/run-route/map.png" alt="" class="img-map">
-            <img src="assets/images/run-route/10k.svg" class="routes-overlay" type="">
+        <div class="map-routes">
+            <img src="assets/images/run-route/map.png" alt="Map" class="img-map">
+            <img src="assets/images/run-route/10k.svg" class="routes-overlay route-image" alt="Route Overlay">
+            <!-- Ubah id menjadi class -->
 
-            <div class="container desktop-route ">
+            <div class="container desktop-route">
                 <div class="row">
                     <div class="col-lg-4 ml-auto">
-                        <h3 class="text-right">Route <br>
-                            Github Marathon</h3>
-                        <div class="card active">
+                        <h3 class="text-right">Route <br> Github Marathon</h3>
+
+                        <div class="card active card-10k"> <!-- Ubah id menjadi class -->
                             <div class="card-body">
-                                <p>A 10km long track that takes runners through the beautiful landscape of Sudriman and
+                                <p>A 10km long track that takes runners through the beautiful landscape of Sudirman and
                                     Thamrin Urban areas</p>
                                 <h5>10K</h5>
                             </div>
                         </div>
-                        <div class="card">
+
+                        <div class="card card-5k"> <!-- Ubah id menjadi class -->
                             <div class="card-body">
                                 <p>A scenic 5km course designed for those looking to experience the thrill of
                                     competitive running in a shorter distance.</p>
@@ -319,21 +419,20 @@
                             </div>
                         </div>
 
-                        <!-- <button class="btn">Get Route</button> -->
                         <div class="information-route">
                             <div class="the-information">
                                 <span class="title">Distance</span><br>
-                                <span class="value distance">10.32 </span>
+                                <span class="value distance distance-value">10.32</span> <!-- Ubah id menjadi class -->
                                 <span class="value">km</span>
                             </div>
                             <div class="the-information">
                                 <span class="title">Estimate</span><br>
-                                <span class="value estimate">45.00 </span>
+                                <span class="value estimate estimate-value">45.00</span> <!-- Ubah id menjadi class -->
                                 <span class="value">min</span>
                             </div>
                             <div class="the-information">
                                 <span class="title">Start</span><br>
-                                <span class="value start">06.00 </span>
+                                <span class="value start start-time">06.00</span> <!-- Ubah id menjadi class -->
                                 <span class="value">wib</span>
                             </div>
                         </div>
@@ -344,49 +443,50 @@
             <div class="mobile-route" style="z-index: 7;">
                 <div class="col-md-6">
                     <h3 class="text-left">Route <br> Github Marathon</h3>
-                    <p>A 10km long track that takes runners through the beautiful landscape of Sudriman and
+                    <p class="desk-run">A 10km long track that takes runners through the beautiful landscape of Sudirman
+                        and
                         Thamrin Urban areas
                     </p>
                     <div class="information-route d-flex align-items-center text-white">
                         <div class="the-information">
                             <span class="title">Distance</span><br>
-                            <span class="value distance">10.32 </span>
+                            <span class="value distance distance-value">10.32</span>
                             <span class="value">km</span>
                         </div>
                         <div class="the-information mx-4">
                             <span class="title">Estimate</span><br>
-                            <span class="value estimate">45.00 </span>
+                            <span class="value estimate estimate-value">45.00</span>
                             <span class="value">min</span>
                         </div>
                         <div class="the-information">
                             <span class="title">Start</span><br>
-                            <span class="value start">06.00 </span>
+                            <span class="value start start-time">06.00</span>
                             <span class="value">wib</span>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <div class="mobile-nav-route">
             <div class="row m-0">
                 <div class="col-lg-6 col-6 text-center p-0">
-                    <div class="card active">
+                    <div class="card active card-10k"> <!-- Ubah id menjadi class -->
                         <div class="card-body">
-                            <h4>10K</h4>
+                            <h5>10K</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-6 text-center p-0">
-                    <div class="card">
+                    <div class="card card-5k"> <!-- Ubah id menjadi class -->
                         <div class="card-body">
-                            <h4>5K</h4>
+                            <h5>5K</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="time-remaining py-4 d-none">
@@ -405,18 +505,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
-    <!-- <script>
-        // Mengaplikasikan Vivus dengan mode reverse
-        new Vivus('svg-overlay', {
-            type: 'sync',
-            duration: 100,   // Durasi animasi
-            delay: 500,   // Durasi animasi
-            animTimingFunction: Vivus.LINEAR,
-
-            reverse: true     // Animasi dimulai dari akhir
-        });
-    </script> -->
-
 
     <script>
         // Fungsi untuk animasi number
@@ -454,52 +542,9 @@
         });
     </script>
 
-    <script>
-        const mapRoutes = document.querySelector('.map-routes');
+    
 
-        mapRoutes.addEventListener('scroll', function () {
-            if (mapRoutes.scrollLeft > 550) {
-                mapRoutes.scrollTo({
-                    left: 550,
-                    // behavior: 'smooth'  // Menambahkan animasi smooth pada scroll
-                });
-            }
-        });
-
-
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        mapRoutes.addEventListener('mousedown', (e) => {
-            isDown = true;
-            mapRoutes.classList.add('active');
-            startX = e.pageX - mapRoutes.offsetLeft;
-            scrollLeft = mapRoutes.scrollLeft;
-            mapRoutes.style.cursor = 'grabbing';
-        });
-
-        mapRoutes.addEventListener('mouseleave', () => {
-            isDown = false;
-            mapRoutes.classList.remove('active');
-            mapRoutes.style.cursor = 'grab';
-        });
-
-        mapRoutes.addEventListener('mouseup', () => {
-            isDown = false;
-            mapRoutes.classList.remove('active');
-            mapRoutes.style.cursor = 'grab';
-        });
-
-        mapRoutes.addEventListener('mousemove', (e) => {
-            if (!isDown) return;  // Hentikan jika mouse tidak ditekan
-            e.preventDefault();
-            const x = e.pageX - mapRoutes.offsetLeft;
-            const walk = (x - startX) * 2;  // Adjust kecepatan scroll
-            mapRoutes.scrollLeft = scrollLeft - walk;
-        });
-
-    </script>
+    <script src="assets/js/run-swap.js"></script>
 </body>
 
 </html>
