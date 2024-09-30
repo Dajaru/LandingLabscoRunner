@@ -21,9 +21,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-p {
+h5{
     margin: 0 !important;
 }
 
@@ -448,12 +446,16 @@ header .navbar .mobile-nav.actived .hamburger,
 .content .run-category {
     padding: 30px 0px;
 }
+.content .run-category a {
+    text-decoration: none !important;
+}
 
 .content .run-category .card {
     border: 2px solid var(--bay-of-many-600);
     border-radius: 10px;
     padding: 30px 0px 30px 10px;
 }
+
 
 .content .run-category .card .row {
     margin: 0 !important;
