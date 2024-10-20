@@ -8,7 +8,8 @@
 }
 
 .landingRaceProperty {
-    background: url('../images/landing.png') no-repeat center;
+    /* background: url('../images/landing.png') no-repeat center; */
+    background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('../images/landing.png') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 70vh;

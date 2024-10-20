@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabungan PNG dan SVG</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .body {
+            overflow: hidden;
+        }
+
+        .routes {
+            overflow-x: hidden;
+        }
+
+        .map-routes {
+            position: relative;
+            min-height: 84vh;
+            cursor: default;
+        }
+
+        .map-routes:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.763));
+            z-index: 1;
+            display: block;
+        }
+
+        .map-routes img {
+            position: absolute;
+        }
+
+        .map-routes img:nth-child(2),
+        .desktop-route {
+            z-index: 2;
+        }
+
+        .routes .desktop-route h3 {
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: right;
+            margin: 0;
+        }
+
+        .routes .desktop-route .card {
+            margin: 10px 0;
+            border-radius: 0 10px 10px 0;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white !important;
+            transition: background-color 0.2s ease-in;
+            cursor: pointer;
+        }
+
+        .routes .desktop-route .card:hover,
+        .routes .desktop-route button:hover {
+            background-color: #27357d;
+        }
+
+        .routes .desktop-route .active {
+            background-color: #27357d;
+        }
+
+        .routes .desktop-route .card-body {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            /* flex-direction: row-reverse; */
+            padding: 20px 15px;
+        }
+
+        .routes .desktop-route .card-body h5 {
+            margin: 0px !important;
+            padding: 0 5px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            width: 18%;
+        }
+
+        .routes .desktop-route .card-body p {
+            font-size: 10px;
+            font-weight: 600;
+            text-align: right !important;
+            margin: 0;
+            width: 80%;
+            padding: 0px 10px;
+            text-align: left;
+        }
+
+        .routes .desktop-route button {
+            background-color: #27357d;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            transition: clip-path 0.5s ease-in-out;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .map-routes .desktop-route .information-route {
+            padding: 10px 0px 10px 25px;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: right;
+            z-index: 4;
+        }
+
+        .map-routes .desktop-route .information-route .the-information {
+            width: 82px;
+        }
+
+        .map-routes .desktop-route .information-route .title {
+            font-weight: 600;
+            font-size: 12px;
+            text-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .map-routes .desktop-route .information-route .value {
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .map-routes .information-route .title,
+        .map-routes .information-route .value {
+            text-shadow:
+                0 3px 6px rgba(0, 0, 0, 0.4),
+                0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .routes .mobile-route,
+        .routes .mobile-nav-route {
+            display: none;
+        }
+
+        .routes .mobile-route {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 5;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .routes .mobile-route h3 {
+            font-weight: bold;
+        }
+
+        .routes .mobile-nav-route .active {
+            background-color: #27357d;
+            color: white;
+        }
+
+        .routes .mobile-nav-route .card {
+            border-radius: 0;
+        }
+
+        .routes .mobile-nav-route .card h4 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+
+
+        .time-remaining {
+            background-color: #27357d;
+            color: white;
+        }
+
+        .time-remaining h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .time-remaining h4 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+
+        @media (max-width: 575.28px) {
+            .map-routes {
+                min-height: 700px;
+            }
+
+            .map-routes .mobile-route {
+                padding: 0 0 20px 0;
+            }
+
+            .map-routes .mobile-route h3 {
+                font-weight: bold;
+                margin: 0;
+                font-size: 30px;
+            }
+
+            .map-routes .mobile-route p {
+                font-size: 14px;
+                margin: 10px 0;
+            }
+
+            .map-routes .mobile-route .information-route {
+                color: #ffffff;
+            }
+
+            .map-routes .mobile-route .information-route .the-information {
+                width: 84px;
+            }
+
+            .map-routes .mobile-route .information-route .title {
+                font-size: 10px;
+                font-weight: bold;
+            }
+
+            .map-routes .mobile-route .information-route .value {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .map-routes .mobile-nav-route h3 {
+                font-weight: bold;
+                margin: 0;
+                font-size: 24px;
+
+            }
+
+        }
+
+        @media (max-width: 992px) {
+            .map-routes::-webkit-scrollbar {
+                display: none;
+            }
+
+            .map-routes {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                min-height: 700px;
+            }
+
+            .map-routes:active {
+                cursor: grabbing;
+            }
+
+            .map-routes img {
+                pointer-events: none;
+            }
+
+            .routes .map-routes img {
+                width: none !important;
+                min-height: 700px;
+            }
+
+            .mobile-route,
+            .mobile-nav-route {
+                display: block !important;
+            }
+
+            .map-routes:after {
+                bottom: 0;
+                left: 0;
+                width: 1000px;
+                height: 100%;
+                background: linear-gradient(to bottom left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+            }
+
+            .desktop-route,
+            .map-routes .desktop-route .information-route {
+                display: none !important;
+            }
+
+        }
+
+        @media (min-width: 992px) {
+            .routes .map-routes img {
+                height: 100%;
+                object-fit: cover;
+                object-position: left;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .routes .desktop-route .card-body h5 {
+
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="routes">
+        <div class="map-routes d-flex align-items-center">
+            <img src="assets/images/run-route/map.png" alt="Map" class="img-map">
+            <img src="assets/images/run-route/10k.svg" class="routes-overlay route-image" alt="Route Overlay">
+            <!-- Ubah id menjadi class -->
+
+            <div class="container desktop-route">
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <h3 class="text-right">Route <br> Github Marathon</h3>
+
+                        <div class="card active card-10k"> <!-- Ubah id menjadi class -->
+                            <div class="card-body">
+                                <p>A 10km long track that takes runners through the beautiful landscape of Sudirman and
+                                    Thamrin Urban areas</p>
+                                <h5>10K</h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-5k"> <!-- Ubah id menjadi class -->
+                            <div class="card-body">
+                                <p>A scenic 5km course designed for those looking to experience the thrill of
+                                    competitive running in a shorter distance.</p>
+                                <h5>5K</h5>
+                            </div>
+                        </div>
+
+                        <div class="information-route">
+                            <div class="the-information">
+                                <span class="title">Distance</span><br>
+                                <span class="value distance distance-value">10.32</span> <!-- Ubah id menjadi class -->
+                                <span class="value">km</span>
+                            </div>
+                            <div class="the-information">
+                                <span class="title">Estimate</span><br>
+                                <span class="value estimate estimate-value">45.00</span> <!-- Ubah id menjadi class -->
+                                <span class="value">min</span>
+                            </div>
+                            <div class="the-information">
+                                <span class="title">Start</span><br>
+                                <span class="value start start-time">06.00</span> <!-- Ubah id menjadi class -->
+                                <span class="value">wib</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-route" style="z-index: 7;">
+                <div class="col-md-6">
+                    <h3 class="text-left">Route <br> Github Marathon</h3>
+                    <p class="desk-run">A 10km long track that takes runners through the beautiful landscape of Sudirman
+                        and
+                        Thamrin Urban areas
+                    </p>
+                    <div class="information-route d-flex align-items-center text-white">
+                        <div class="the-information">
+                            <span class="title">Distance</span><br>
+                            <span class="value distance distance-value">10.32</span>
+                            <span class="value">km</span>
+                        </div>
+                        <div class="the-information mx-4">
+                            <span class="title">Estimate</span><br>
+                            <span class="value estimate estimate-value">45.00</span>
+                            <span class="value">min</span>
+                        </div>
+                        <div class="the-information">
+                            <span class="title">Start</span><br>
+                            <span class="value start start-time">06.00</span>
+                            <span class="value">wib</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-nav-route">
+            <div class="row m-0">
+                <div class="col-lg-6 col-6 text-center p-0">
+                    <div class="card active card-10k"> <!-- Ubah id menjadi class -->
+                        <div class="card-body">
+                            <h5>10K</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-6 text-center p-0">
+                    <div class="card card-5k"> <!-- Ubah id menjadi class -->
+                        <div class="card-body">
+                            <h5>5K</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="time-remaining py-4 d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>wkawdkoawdkoadwko</h1>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <h4>start 07 December 2024</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
+    <script>
+        // Mengaplikasikan Vivus dengan mode reverse
+        new Vivus('svg-overlay', {
+            type: 'oneByOne',  // Animasi satu demi satu
+            duration: 100,   // Durasi animasi
+            delay: 500,   // Durasi animasi
+            animTimingFunction: Vivus.LINEAR,
+
+            reverse: true     // Animasi dimulai dari akhir
+        });
+    </script>
+
+
+    <script>
+        // Fungsi untuk animasi number
+        function animateNumbers(selector, duration) {
+            // Ambil elemen berdasarkan class selector
+            $(selector).each(function () {
+                var $this = $(this);
+                var number = parseFloat($this.text());  // Ambil nilai angka dari teks
+                $this.animateNumber({
+                    number: number,  // Nilai angka dari teks elemen
+                    numberStep: function (now, tween) {
+                        // Pastikan dua angka desimal selalu muncul
+                        $(tween.elem).text(now.toFixed(2));
+                    }
+                }, duration);
+            });
+        }
+
+        // Jalankan animasi untuk masing-masing class
+        animateNumbers('.distance', 2000);
+        animateNumbers('.estimate', 2500);
+
+        // Untuk Start Time, lakukan padding agar angka selalu 06.00 misalnya
+        $('.start').each(function () {
+            var $this = $(this);
+            var number = parseFloat($this.text());  // Ambil nilai angka dari teks elemen
+            $this.animateNumber({
+                number: number,
+                numberStep: function (now, tween) {
+                    let formattedNumber = now.toFixed(2);  // Pastikan dua angka desimal
+                    let paddedNumber = formattedNumber.padStart(5, '0');  // Tambah padding di depan
+                    $(tween.elem).text(paddedNumber);  // Tampilkan hasil yang sudah di-format
+                }
+            }, 3000);
+        });
+    </script>
+
+    <script>
+        const mapRoutes = document.querySelector('.map-routes');
+
+        mapRoutes.addEventListener('scroll', function () {
+            if (mapRoutes.scrollLeft > 700) {
+                mapRoutes.scrollTo({
+                    left: 700,
+                    // behavior: 'smooth'  // Menambahkan animasi smooth pada scroll
+                });
+            }
+        });
+
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        mapRoutes.addEventListener('mousedown', (e) => {
+            isDown = true;
+            mapRoutes.classList.add('active');
+            startX = e.pageX - mapRoutes.offsetLeft;
+            scrollLeft = mapRoutes.scrollLeft;
+            mapRoutes.style.cursor = 'grabbing';
+        });
+
+        mapRoutes.addEventListener('mouseleave', () => {
+            isDown = false;
+            mapRoutes.classList.remove('active');
+            mapRoutes.style.cursor = 'grab';
+        });
+
+        mapRoutes.addEventListener('mouseup', () => {
+            isDown = false;
+            mapRoutes.classList.remove('active');
+            mapRoutes.style.cursor = 'grab';
+        });
+
+        mapRoutes.addEventListener('mousemove', (e) => {
+            if (!isDown) return;  // Hentikan jika mouse tidak ditekan
+            e.preventDefault();
+            const x = e.pageX - mapRoutes.offsetLeft;
+            const walk = (x - startX) * 2;  // Adjust kecepatan scroll
+            mapRoutes.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+    <script>
+        const routeImage = document.querySelector('.route-image');
+        const card10k = document.querySelectorAll('.card-10k');
+        const card5k = document.querySelectorAll('.card-5k');
+        const distanceValue = document.querySelectorAll('.distance-value');
+        const estimateValue = document.querySelectorAll('.estimate-value');
+        const startTime = document.querySelectorAll('.start-time');
+        const deskRun = document.querySelectorAll('.desk-run'); // Ambil elemen deskripsi
+
+        // Fungsi untuk mengubah rute 10K
+        const activate10KRoute = () => {
+            routeImage.src = 'assets/images/run-route/10k.svg'; // Path SVG 10K
+            distanceValue.forEach((el) => el.textContent = '10.32');
+            estimateValue.forEach((el) => el.textContent = '45.00');
+            startTime.forEach((el) => el.textContent = '06.00');
+
+            deskRun.forEach((el) => el.textContent = 'A 10km long track that takes runners through the beautiful landscape of Sudirman and Thamrin Urban areas.'); // Ubah deskripsi untuk rute 10K
+
+            card10k.forEach((el) => el.classList.add('active'));
+            card5k.forEach((el) => el.classList.remove('active'));
+        };
+
+        // Fungsi untuk mengubah rute 5K
+        const activate5KRoute = () => {
+            routeImage.src = 'assets/images/run-route/5k.svg'; // Path SVG 5K
+            distanceValue.forEach((el) => el.textContent = '5.00');
+            estimateValue.forEach((el) => el.textContent = '25.00');
+            startTime.forEach((el) => el.textContent = '06.30');
+
+            deskRun.forEach((el) => el.textContent = 'A scenic 5km course designed for those looking to experience the thrill of competitive running in a shorter distance.'); // Ubah deskripsi untuk rute 5K
+
+            card5k.forEach((el) => el.classList.add('active'));
+            card10k.forEach((el) => el.classList.remove('active'));
+        };
+
+        // Event listener untuk rute 10K
+        card10k.forEach((el) => el.addEventListener('click', activate10KRoute));
+
+        // Event listener untuk rute 5K
+        card5k.forEach((el) => el.addEventListener('click', activate5KRoute));
+
+    </script>
+</body>
+
+</html>

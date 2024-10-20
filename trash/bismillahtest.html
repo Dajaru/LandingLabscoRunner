@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabungan PNG dan SVG</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        
+        .map-routes{
+            width: 100%;
+            
+        }
+        .route{
+            width: 100%;
+            height: 65vh;
+            overflow: hidden;
+        }
+        .route img{
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1080px) {
+            .route img{
+                width: 1360px !important;
+                overflow-x: scroll;
+                object-fit: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="routes">
+        <div class="route">
+            <img src="assets/images/run-route/route10k.svg" alt="" class="img-map">
+
+            <div class="map-routes d-flex align-items-center">
+                <div class="container desktop-route">
+                    <div class="col-lg-4 col-md-6 ml-auto">
+                        <div class="card">
+                            <div class="card-body the-route">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, numquam.</p>
+                                <h5>10K</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="the-route">
+            <div class="row m-0">
+                <div class="col-lg-6 col-6 text-center py-4 bg-dark">
+                    berak kadal
+                </div>
+                <div class="col-lg-6 col-6 text-center py-4 bg-light">
+                    berak kadal
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
+    <!-- <script>
+        // Mengaplikasikan Vivus dengan mode reverse
+        new Vivus('svg-overlay', {
+            type: 'sync',
+            duration: 100,   // Durasi animasi
+            delay: 500,   // Durasi animasi
+            animTimingFunction: Vivus.LINEAR,
+
+            reverse: true     // Animasi dimulai dari akhir
+        });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Peta Animasi</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .map {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #cce7ff;
+            /* Warna peta */
+            border: 2px solid #000;
+            /* Garis batas peta */
+            overflow: hidden;
+        }
+
+        .path {
+            position: absolute;
+            top: 50%;
+            /* Posisi awal di tengah */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: red;
+            /* Warna jalur */
+            animation: drawPath 4s forwards;
+            /* Animasi jalur */
+        }
+
+        .marker {
+            position: absolute;
+            top: 50%;
+            /* Posisi awal di tengah */
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+            /* Warna penanda */
+            border-radius: 50%;
+            animation: moveMarker 4s forwards;
+            /* Animasi penanda */
+        }
+
+        @keyframes drawPath {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes moveMarker {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="path"></div>
+        <div class="marker"></div>
+    </div>
+</body>
+
+</html>
